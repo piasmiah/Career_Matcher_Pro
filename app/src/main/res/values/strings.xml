@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">CareerMatcher Pro</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--privacy policy text-->
+    <string name="first_heading"><b>Privacy Policy for Trip Tour Guide</b>\nAt Trip Tour Guide, one of our main priorities is the privacy of our visitors.This Privacy Policy document contains types of information that is collected and recorded by Trodev and how we use it.If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</string>
+    <string name="second_heading"><b>\nLog Files</b>\nTrip Tour Guide follows a standard procedure of using log files. These files log visitors when they use app. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the app, tracking users\' movement on the app, and gathering demographic information.</string>
+    <string name="third_heading"><b>\nPrivacy Policies</b>\nYou may consult this list to find the Privacy Policy for each of the advertising partners of Trip Tour Guide. Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Beacons that are used in their respective advertisements and links that appear on Trip Tour Guide. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on this app or other apps or websites. Note that Daily Ayah has no access to or control over these cookies that are used by third-party advertisers.</string>
+    <string name="fourth_heading"><b>\nThird Party Privacy Policies</b>\nTrodev\'s Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options.</string>
+    <string name="fifth_heading"><b>\nChildren\'s Information</b>\nAnother part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity. Trip Tour Guide does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our App, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</string>
+    <string name="sixth_heading"><b>\nConsent</b>\nBy using our app, you hereby consent to our Privacy Policy and agree to its Terms and Conditions.</string>
+    <string name="google_map_key">AIzaSyB_qsP8AOP_P0MdlPz-48TDaJYjTP3vbjo</string>
+
+    <string name="start">Open</string>
+    <string name="close">Close</string>
+    <string name="cv_header">👉👉 CV মেকারে আপনাকে স্বাগতম!! </string>
+    <string name="cv_price">💸💸 আমাদের CV মেকার চার্জ মাত্র ২০ টাকা।</string>
+    <string name="cv_delivery_time">⌚⌚ আপনি এই CV ২৪ ঘণ্টার মধ্য আপনার G-mail এ পেয়ে যাবেন।</string>
+    <string name="cv_string">👉👉 আপনি যদি খুব কম সময়ে CV বানাতে চান তাহলে আমরাই দিচ্ছি ডিজিটাল CV মেকার সিস্টেম সুবিধা। এই-জন্য আপনাকে সামান্য চার্জ পরিশোধ করতে হবে। আমাদের থেকে পিডিএফ ফাইল এবং ওয়ার্ড ফাইল পাবেন। </string>
+    <string name="cv_notice">📝 CV অর্ডার করতে হলে আপনাকে নিম্মলিখিত কিছু তথ্য দিয়ে সাহায্য করতে হবে 📝 </string>
+    <string name="cv_payment_number">💰💰<b> পেমেন্ট মেথড</b>💰💰\n01615257555 (বিকাশ, নগদ, রকেট)</string>
+    <string name="copyright">© Copyright 2021-2023 Trodev, all right reserved.</string>
+
+    <string name="about_us_one">Welcome to Career Matcher Pro – your ultimate companion in the journey of finding your dream job! Our innovative job seeker application is designed to provide you with a comprehensive platform to explore a world of opportunities. From detailed job descriptions, captivating images, to informative PDF files, we offer an immersive experience that goes beyond traditional job search.</string>
+
 </resources>

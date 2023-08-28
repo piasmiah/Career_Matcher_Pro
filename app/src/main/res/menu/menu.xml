@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/menu_video"
+        android:icon="@drawable/ic_video"
+        android:title="Video" />
+
+    <item
+        android:id="@+id/menu_pdf"
+        android:icon="@drawable/ic_pdf"
+        android:title="PDF's File" />
+
+    <item
+        android:id="@+id/menu_about"
+        android:icon="@drawable/ic_about"
+        android:title="About Us" />
+
+</menu>

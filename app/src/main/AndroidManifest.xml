@@ -2,25 +2,87 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION"
+        tools:ignore="CoarseFineLocation" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="com.google.android.gms.permission.AD_ID"
+        tools:node="remove" />
+
     <application
+        android:name=".OfflineDatabase"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/apps_bg"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/apps_bg"
         android:supportsRtl="true"
         android:theme="@style/Theme.CareerMatcherPro"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".teacher.TeacherJobActivity"
+            android:exported="false"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity
+            android:name=".nongovt.NonGovtJobActivity"
+            android:exported="false"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity
+            android:name=".activity.ShowPDFActivity"
+            android:exported="false"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity
+            android:name=".activity.FullJobDetailsActivity"
+            android:exported="false"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity
+            android:name=".govt.GovtActivity"
+            android:exported="false"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity
+            android:name=".cv.TemplateActivity"
+            android:exported="false"
+            android:parentActivityName=".cv.CVActivity" />
+        <activity
+            android:name=".cv.CVActivity"
+            android:exported="false"
+            android:parentActivityName=".activity.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.WebsiteActivity"
+            android:exported="false"
+            android:parentActivityName=".activity.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.NotificationActivity"
+            android:exported="false"
+            android:parentActivityName=".activity.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

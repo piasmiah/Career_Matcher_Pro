@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/menu_cv"
+        android:icon="@drawable/ic_cv"
+        android:title="CV Maker" />
+
+    <item
+        android:id="@+id/menu_notification"
+        android:icon="@drawable/ic_notification"
+        android:title="Notification" />
+
+    <item
+        android:id="@+id/menu_tube"
+        android:icon="@drawable/ic_video"
+        android:title="Career Matcher Tube" />
+
+    <item
+        android:id="@+id/menu_developer"
+        android:icon="@drawable/ic_developer"
+        android:title="Developer" />
+
+    <item
+        android:id="@+id/menu_website"
+        android:icon="@drawable/ic_website"
+        android:title="Website" />
+
+    <item
+        android:id="@+id/menu_privacy"
+        android:icon="@drawable/ic_privacy"
+        android:title="Privacy Policy" />
+
+    <item
+        android:id="@+id/menu_share"
+        android:icon="@drawable/ic_share"
+        android:title="Share Apps" />
+
+    <item
+        android:id="@+id/menu_rate"
+        android:icon="@drawable/ic_rate"
+        android:title="Rate Us" />
+
+    <item
+        android:id="@+id/menu_apps"
+        android:icon="@drawable/ic_apps"
+        android:title="Our Apps" />
+
+</menu>
