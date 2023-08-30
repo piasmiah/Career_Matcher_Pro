@@ -30,14 +30,12 @@ import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
     RecyclerView recyclerView;
-    CardView govtMc, nongovtMc, teacherMc;
+    CardView govtMc, nongovtMc, teacherMc, bankMc, ngoMc;
     ArrayList<AdviceModel> model;
     AdviceAdapter adapter;
-    FirebaseDatabase database;
     DatabaseReference reference;
 
     public HomeFragment() {
-
     }
 
     @Override
@@ -50,6 +48,8 @@ public class HomeFragment extends Fragment {
         govtMc = view.findViewById(R.id.govtMc);
         nongovtMc = view.findViewById(R.id.nongovtMc);
         teacherMc = view.findViewById(R.id.teacherMc);
+        bankMc = view.findViewById(R.id.bankMc);
+        ngoMc = view.findViewById(R.id.ngoMc);
         recyclerView = view.findViewById(R.id.recyclerView);
 
 
@@ -73,6 +73,20 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getContext(), TeacherJobActivity.class));
+            }
+        });
+
+        ngoMc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        bankMc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
 
