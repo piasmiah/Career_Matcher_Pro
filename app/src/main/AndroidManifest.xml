@@ -29,6 +29,22 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
 
+        <activity android:name=".bcs.BCSQuestionAnswerActivity"
+            android:exported="false"
+            android:parentActivityName=".activity.MainActivity"/>
+        <activity android:name=".FullQuestionAnswerActivity"
+            android:exported="false"/>
+        <activity android:name=".bank_que.BankQuestionAnswerActivity"
+            android:exported="false"
+            android:parentActivityName=".activity.MainActivity"/>
+        <activity android:name=".bank.BankJobActivity"
+            android:exported="false"
+            android:parentActivityName=".activity.MainActivity"/>
+        <activity android:name=".FullJobDetailsActivity"
+            android:exported="false"/>
+        <activity android:name=".ngo.NGOJobActivity"
+            android:exported="false"
+            android:parentActivityName=".activity.MainActivity"/>
         <activity
             android:name=".teacher.TeacherJobActivity"
             android:exported="false"
