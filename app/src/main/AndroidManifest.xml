@@ -6,10 +6,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission
-        android:name="android.permission.ACCESS_FINE_LOCATION"
-        tools:ignore="CoarseFineLocation" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission
@@ -19,6 +15,7 @@
     <application
         android:name=".OfflineDatabase"
         android:allowBackup="true"
+        android:allowClearUserData="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/apps_bg"
@@ -28,23 +25,36 @@
         android:theme="@style/Theme.CareerMatcherPro"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-
-        <activity android:name=".bcs.BCSQuestionAnswerActivity"
+        <activity
+            android:name=".cv.TemplateViewActivity"
             android:exported="false"
-            android:parentActivityName=".activity.MainActivity"/>
-        <activity android:name=".FullQuestionAnswerActivity"
-            android:exported="false"/>
-        <activity android:name=".bank_que.BankQuestionAnswerActivity"
+            android:parentActivityName=".cv.TemplateCVActivity" />
+        <activity
+            android:name=".cv.TemplateCVActivity"
             android:exported="false"
-            android:parentActivityName=".activity.MainActivity"/>
-        <activity android:name=".bank.BankJobActivity"
+            android:parentActivityName=".cv.CVActivity" />
+        <activity
+            android:name=".bcs.BCSQuestionAnswerActivity"
             android:exported="false"
-            android:parentActivityName=".activity.MainActivity"/>
-        <activity android:name=".FullJobDetailsActivity"
-            android:exported="false"/>
-        <activity android:name=".ngo.NGOJobActivity"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity
+            android:name=".FullQuestionAnswerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bank_que.BankQuestionAnswerActivity"
             android:exported="false"
-            android:parentActivityName=".activity.MainActivity"/>
+            android:parentActivityName=".activity.MainActivity" />
+        <activity
+            android:name=".bank.BankJobActivity"
+            android:exported="false"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity
+            android:name=".FullJobDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ngo.NGOJobActivity"
+            android:exported="false"
+            android:parentActivityName=".activity.MainActivity" />
         <activity
             android:name=".teacher.TeacherJobActivity"
             android:exported="false"
@@ -65,10 +75,6 @@
             android:name=".govt.GovtActivity"
             android:exported="false"
             android:parentActivityName=".activity.MainActivity" />
-        <activity
-            android:name=".cv.TemplateActivity"
-            android:exported="false"
-            android:parentActivityName=".cv.CVActivity" />
         <activity
             android:name=".cv.CVActivity"
             android:exported="false"
@@ -98,7 +104,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

@@ -134,7 +134,7 @@ public class CVActivity extends AppCompatActivity {
         templateLl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CVActivity.this, TemplateActivity.class));
+                startActivity(new Intent(CVActivity.this, TemplateCVActivity.class));
             }
         });
 
