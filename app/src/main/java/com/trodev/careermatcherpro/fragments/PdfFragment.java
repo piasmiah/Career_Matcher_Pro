@@ -12,11 +12,13 @@ import android.view.ViewGroup;
 import com.google.android.material.card.MaterialCardView;
 import com.trodev.careermatcherpro.R;
 import com.trodev.careermatcherpro.premium_pdf.BanglaActivity;
+import com.trodev.careermatcherpro.premium_pdf.EnglishActivity;
+import com.trodev.careermatcherpro.premium_pdf.MentalActivity;
 
 
 public class PdfFragment extends Fragment {
 
-    MaterialCardView banglaMC;
+    MaterialCardView banglaMC, englishMC, mentalMC;
 
 
     public PdfFragment() {
@@ -31,11 +33,27 @@ public class PdfFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_pdf, container, false);
 
         banglaMC = view.findViewById(R.id.banglaMC);
+        englishMC = view.findViewById(R.id.englishMC);
+        mentalMC = view.findViewById(R.id.mentalMC);
 
         banglaMC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getContext(), BanglaActivity.class));
+            }
+        });
+
+        englishMC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), EnglishActivity.class));
+            }
+        });
+
+        mentalMC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), MentalActivity.class));
             }
         });
 
