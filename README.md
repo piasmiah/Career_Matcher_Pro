@@ -1,5 +1,5 @@
 # CareerMatcher_Pro
-<img src="https://github.com/zobayerdev/CareerMatch_Pro_Admin/assets/74914169/29019b21-002c-4006-94dd-537301d7fafe" width=5% height=5% > Welcome to <b>Career Matcher Pro</b> – your ultimate job-finding and CV-making solution!
+<img src="https://github.com/zobayerdev/Career_Matcher_Pro/assets/74914169/f911a04c-e825-4be9-b1fe-781e8589a457" width=8% height=8% > Welcome to <b>Career Matcher Pro</b> – your ultimate job-finding and CV-making solution!
 
 We are your one-stop destination for effortlessly navigating the complex world of job applications, ensuring you secure the career of your dreams. Whether you're eyeing government positions, non-government roles, teaching opportunities, newspaper listings, NGO positions, or even coveted bank jobs, we have you covered. Our comprehensive platform encompasses it all, complete with a wealth of job-specific question-and-answer resources.
 
@@ -21,4 +21,4 @@ Our dedicated team ensures that Career Matcher Pro remains up-to-date with the l
 **Unparalleled Support Every Step of the Way:**<br>
 Navigating the job market can be overwhelming, but you're not alone. Career Matcher Pro offers continuous support, guiding you from initial job searches to final application submissions. Let us be your trusted partner in your journey towards professional success. At Career Matcher Pro, we're not just an application; we're your gateway to a world of possibilities. Join our community today and embark on a seamless and enriching job-seeking experience. Your dream career is just a click away.
 
-<img src="https://github.com/zobayerdev/CareerMatch_Pro_Admin/assets/74914169/29019b21-002c-4006-94dd-537301d7fafe" width=40% height=40% >
+<img src="https://github.com/zobayerdev/Career_Matcher_Pro/assets/74914169/f911a04c-e825-4be9-b1fe-781e8589a457" width=40% height=40% >
