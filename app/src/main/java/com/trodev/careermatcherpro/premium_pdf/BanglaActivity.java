@@ -33,7 +33,7 @@ public class BanglaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bangla);
         /*init action bar*/
-        getSupportActionBar().setTitle("সকল এনজিও চাকরি");
+        getSupportActionBar().setTitle("প্রিমিয়াম পিডিএফ");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         /*add_ngo_job_btn = findViewById(R.id.add_ngo_job_btn);*/

@@ -34,7 +34,7 @@ public class MentalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mental);
 
         /*init action bar*/
-        getSupportActionBar().setTitle("সকল এনজিও চাকরি");
+        getSupportActionBar().setTitle("প্রিমিয়াম পিডিএফ");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         /*add_ngo_job_btn = findViewById(R.id.add_ngo_job_btn);*/
@@ -80,13 +80,5 @@ public class MentalActivity extends AppCompatActivity {
 
         /*database synced*/
         reference_mental.keepSynced(true);
-
-     /*   add_ngo_job_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(NGOJobActivity.this, UploadNGOJobActivity.class));
-            }
-        });*/
-
     }
 }

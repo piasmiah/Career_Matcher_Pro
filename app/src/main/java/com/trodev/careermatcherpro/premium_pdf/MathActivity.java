@@ -27,13 +27,14 @@ public class MathActivity extends AppCompatActivity {
     PremiumPdfAdapter adapter;
     FirebaseDatabase database;
     DatabaseReference reference_math;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_math);
 
         /*init action bar*/
-        getSupportActionBar().setTitle("সকল এনজিও চাকরি");
+        getSupportActionBar().setTitle("প্রিমিয়াম পিডিএফ");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         /*add_ngo_job_btn = findViewById(R.id.add_ngo_job_btn);*/

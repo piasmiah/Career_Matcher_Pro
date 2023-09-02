@@ -33,7 +33,7 @@ public class BangladeshAffActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bangladesh_aff);
 
         /*init action bar*/
-        getSupportActionBar().setTitle("সকল এনজিও চাকরি");
+        getSupportActionBar().setTitle("প্রিমিয়াম পিডিএফ");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         /*add_ngo_job_btn = findViewById(R.id.add_ngo_job_btn);*/

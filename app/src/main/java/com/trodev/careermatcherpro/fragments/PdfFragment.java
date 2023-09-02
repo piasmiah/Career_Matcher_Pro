@@ -23,13 +23,11 @@ import com.trodev.careermatcherpro.premium_pdf.MentalActivity;
 
 public class PdfFragment extends Fragment {
 
-    MaterialCardView banglaMC, englishMC, mentalMC, bangladeshAffMC, internationalAffMC, generalMC, computerMC, mathemeticalMC;
-
+    MaterialCardView banglaMC, englishMC, mentalMC, bangladeshAffMC, internationalAffMC, generalMC, computerMC, mathemeticalMC, ethicsMc, geographyMc;
 
     public PdfFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
