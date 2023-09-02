@@ -15,7 +15,9 @@ import com.trodev.careermatcherpro.premium_pdf.BanglaActivity;
 import com.trodev.careermatcherpro.premium_pdf.BangladeshAffActivity;
 import com.trodev.careermatcherpro.premium_pdf.ComputerActivity;
 import com.trodev.careermatcherpro.premium_pdf.EnglishActivity;
+import com.trodev.careermatcherpro.premium_pdf.EthicsActivity;
 import com.trodev.careermatcherpro.premium_pdf.GeneralScienceActivity;
+import com.trodev.careermatcherpro.premium_pdf.GeographyActivity;
 import com.trodev.careermatcherpro.premium_pdf.InternationalAffActivity;
 import com.trodev.careermatcherpro.premium_pdf.MathActivity;
 import com.trodev.careermatcherpro.premium_pdf.MentalActivity;
@@ -43,6 +45,8 @@ public class PdfFragment extends Fragment {
         generalMC = view.findViewById(R.id.generalMC);
         computerMC = view.findViewById(R.id.computerMC);
         mathemeticalMC = view.findViewById(R.id.mathemeticalMC);
+        geographyMc = view.findViewById(R.id.geographyMc);
+        ethicsMc = view.findViewById(R.id.ethicsMc);
 
         banglaMC.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,6 +101,20 @@ public class PdfFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getContext(), MathActivity.class));
+            }
+        });
+
+        geographyMc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), GeographyActivity.class));
+            }
+        });
+
+        ethicsMc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), EthicsActivity.class));
             }
         });
 
