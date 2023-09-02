@@ -14,7 +14,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.trodev.careermatcherpro.PremiumAdapter;
 import com.trodev.careermatcherpro.R;
 
 import java.util.ArrayList;
@@ -23,7 +22,7 @@ public class TemplateCVActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ProgressBar progressBar;
     ArrayList<TemplateModel> model;
-    PremiumAdapter adapter;
+    TemplateAdapter adapter;
     DatabaseReference reference;
 
     @Override
@@ -45,7 +44,7 @@ public class TemplateCVActivity extends AppCompatActivity {
 
         reference = FirebaseDatabase.getInstance().getReference().child("cv_template");
 
-        adapter = new PremiumAdapter(model, getApplicationContext());
+        adapter = new TemplateAdapter(model, getApplicationContext());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setNestedScrollingEnabled(false);
