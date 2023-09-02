@@ -23,7 +23,7 @@ public class EnglishActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ProgressBar progressBar;
 
-    ArrayList<PremiumPdf> model;
+    ArrayList<PremiumPdfModel> model;
     PremiumPdfAdapter adapter;
     FirebaseDatabase database;
     DatabaseReference reference_english;
@@ -62,8 +62,8 @@ public class EnglishActivity extends AppCompatActivity {
 
                     progressBar.setVisibility(View.GONE);
 
-                    PremiumPdf premiumPdf = dataSnapshot.getValue(PremiumPdf.class);
-                    model.add(0, premiumPdf);
+                    PremiumPdfModel premiumPdfModel = dataSnapshot.getValue(PremiumPdfModel.class);
+                    model.add(0, premiumPdfModel);
 
                 }
 

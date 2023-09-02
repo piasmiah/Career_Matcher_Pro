@@ -18,8 +18,7 @@ import com.trodev.careermatcherpro.R;
 
 import java.util.ArrayList;
 
-public class MentalActivity extends AppCompatActivity {
-
+public class ComputerActivity extends AppCompatActivity {
     /*private FloatingActionButton add_ngo_job_btn;*/
     RecyclerView recyclerView;
     ProgressBar progressBar;
@@ -27,11 +26,11 @@ public class MentalActivity extends AppCompatActivity {
     ArrayList<PremiumPdfModel> model;
     PremiumPdfAdapter adapter;
     FirebaseDatabase database;
-    DatabaseReference reference_mental;
+    DatabaseReference reference_computer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mental);
+        setContentView(R.layout.activity_computer);
 
         /*init action bar*/
         getSupportActionBar().setTitle("সকল এনজিও চাকরি");
@@ -47,7 +46,7 @@ public class MentalActivity extends AppCompatActivity {
 
         // database = FirebaseDatabase.getInstance();
 
-        reference_mental = FirebaseDatabase.getInstance().getReference("premium").child("pdf_mental");
+        reference_computer = FirebaseDatabase.getInstance().getReference("premium").child("pdf_computer");
 
         adapter = new PremiumPdfAdapter(model, getApplicationContext());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
@@ -55,7 +54,7 @@ public class MentalActivity extends AppCompatActivity {
         recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setAdapter(adapter);
 
-        reference_mental.addListenerForSingleValueEvent(new ValueEventListener() {
+        reference_computer.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -79,7 +78,7 @@ public class MentalActivity extends AppCompatActivity {
         });
 
         /*database synced*/
-        reference_mental.keepSynced(true);
+        reference_computer.keepSynced(true);
 
      /*   add_ngo_job_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,6 +86,5 @@ public class MentalActivity extends AppCompatActivity {
                 startActivity(new Intent(NGOJobActivity.this, UploadNGOJobActivity.class));
             }
         });*/
-
     }
 }

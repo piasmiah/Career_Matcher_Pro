@@ -1,14 +1,12 @@
 package com.trodev.careermatcherpro.premium_pdf;
 
-import android.media.Image;
-
-public class PremiumPdf {
+public class PremiumPdfModel {
     String pdfTitle, pdfUrl;
 
-    public PremiumPdf() {
+    public PremiumPdfModel() {
     }
 
-    public PremiumPdf(String pdfTitle, String pdfUrl) {
+    public PremiumPdfModel(String pdfTitle, String pdfUrl) {
         this.pdfTitle = pdfTitle;
         this.pdfUrl = pdfUrl;
     }

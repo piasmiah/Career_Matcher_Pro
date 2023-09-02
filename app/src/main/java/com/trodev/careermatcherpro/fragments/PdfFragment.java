@@ -12,13 +12,18 @@ import android.view.ViewGroup;
 import com.google.android.material.card.MaterialCardView;
 import com.trodev.careermatcherpro.R;
 import com.trodev.careermatcherpro.premium_pdf.BanglaActivity;
+import com.trodev.careermatcherpro.premium_pdf.BangladeshAffActivity;
+import com.trodev.careermatcherpro.premium_pdf.ComputerActivity;
 import com.trodev.careermatcherpro.premium_pdf.EnglishActivity;
+import com.trodev.careermatcherpro.premium_pdf.GeneralActivity;
+import com.trodev.careermatcherpro.premium_pdf.InternationalAffActivity;
+import com.trodev.careermatcherpro.premium_pdf.MathActivity;
 import com.trodev.careermatcherpro.premium_pdf.MentalActivity;
 
 
 public class PdfFragment extends Fragment {
 
-    MaterialCardView banglaMC, englishMC, mentalMC;
+    MaterialCardView banglaMC, englishMC, mentalMC, bangladeshAffMC, internationalAffMC, generalMC, computerMC, mathemeticalMC;
 
 
     public PdfFragment() {
@@ -35,6 +40,11 @@ public class PdfFragment extends Fragment {
         banglaMC = view.findViewById(R.id.banglaMC);
         englishMC = view.findViewById(R.id.englishMC);
         mentalMC = view.findViewById(R.id.mentalMC);
+        bangladeshAffMC = view.findViewById(R.id.bangladeshAffMC);
+        internationalAffMC = view.findViewById(R.id.internationalAffMC);
+        generalMC = view.findViewById(R.id.generalMC);
+        computerMC = view.findViewById(R.id.computerMC);
+        mathemeticalMC = view.findViewById(R.id.mathemeticalMC);
 
         banglaMC.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +64,41 @@ public class PdfFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getContext(), MentalActivity.class));
+            }
+        });
+
+        bangladeshAffMC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), BangladeshAffActivity.class));
+            }
+        });
+
+        internationalAffMC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), InternationalAffActivity.class));
+            }
+        });
+
+        generalMC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), GeneralActivity.class));
+            }
+        });
+
+        computerMC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), ComputerActivity.class));
+            }
+        });
+
+        mathemeticalMC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), MathActivity.class));
             }
         });
 
