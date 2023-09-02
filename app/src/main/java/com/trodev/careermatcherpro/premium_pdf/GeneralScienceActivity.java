@@ -18,7 +18,7 @@ import com.trodev.careermatcherpro.R;
 
 import java.util.ArrayList;
 
-public class GeneralActivity extends AppCompatActivity {
+public class GeneralScienceActivity extends AppCompatActivity {
     /*private FloatingActionButton add_ngo_job_btn;*/
     RecyclerView recyclerView;
     ProgressBar progressBar;

@@ -32,7 +32,7 @@
             android:name=".premium_pdf.ComputerActivity"
             android:exported="false" />
         <activity
-            android:name=".premium_pdf.GeneralActivity"
+            android:name=".premium_pdf.GeneralScienceActivity"
             android:exported="false" />
         <activity
             android:name=".premium_pdf.InternationalAffActivity"

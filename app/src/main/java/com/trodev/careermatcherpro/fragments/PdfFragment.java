@@ -15,7 +15,7 @@ import com.trodev.careermatcherpro.premium_pdf.BanglaActivity;
 import com.trodev.careermatcherpro.premium_pdf.BangladeshAffActivity;
 import com.trodev.careermatcherpro.premium_pdf.ComputerActivity;
 import com.trodev.careermatcherpro.premium_pdf.EnglishActivity;
-import com.trodev.careermatcherpro.premium_pdf.GeneralActivity;
+import com.trodev.careermatcherpro.premium_pdf.GeneralScienceActivity;
 import com.trodev.careermatcherpro.premium_pdf.InternationalAffActivity;
 import com.trodev.careermatcherpro.premium_pdf.MathActivity;
 import com.trodev.careermatcherpro.premium_pdf.MentalActivity;
@@ -84,7 +84,7 @@ public class PdfFragment extends Fragment {
         generalMC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getContext(), GeneralActivity.class));
+                startActivity(new Intent(getContext(), GeneralScienceActivity.class));
             }
         });
 
