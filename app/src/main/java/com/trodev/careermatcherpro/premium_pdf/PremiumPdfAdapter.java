@@ -15,10 +15,10 @@ import java.util.ArrayList;
 
 
 public class PremiumPdfAdapter extends RecyclerView.Adapter<PremiumPdfAdapter.MyViewHolder>{
-    ArrayList<PremiumPdf> list;
+    ArrayList<PremiumPdfModel> list;
     Context context;
 
-    public PremiumPdfAdapter(ArrayList<PremiumPdf> list, Context context) {
+    public PremiumPdfAdapter(ArrayList<PremiumPdfModel> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -33,7 +33,7 @@ public class PremiumPdfAdapter extends RecyclerView.Adapter<PremiumPdfAdapter.My
     @Override
     public void onBindViewHolder(@NonNull PremiumPdfAdapter.MyViewHolder holder, int position) {
 
-        PremiumPdf model = list.get(position);
+        PremiumPdfModel model = list.get(position);
         holder.detailsTv.setText(model.getPdfTitle());
 
     }

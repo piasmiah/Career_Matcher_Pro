@@ -18,20 +18,19 @@ import com.trodev.careermatcherpro.R;
 
 import java.util.ArrayList;
 
-public class BanglaActivity extends AppCompatActivity {
-    /*private FloatingActionButton add_ngo_job_btn;*/
+public class InternationalAffActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ProgressBar progressBar;
 
     ArrayList<PremiumPdfModel> model;
     PremiumPdfAdapter adapter;
     FirebaseDatabase database;
-    DatabaseReference reference_bangla;
-
+    DatabaseReference reference_internationalAff;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bangla);
+        setContentView(R.layout.activity_international_aff);
+
         /*init action bar*/
         getSupportActionBar().setTitle("সকল এনজিও চাকরি");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -46,7 +45,7 @@ public class BanglaActivity extends AppCompatActivity {
 
         // database = FirebaseDatabase.getInstance();
 
-        reference_bangla = FirebaseDatabase.getInstance().getReference("premium").child("pdf_bangla");
+        reference_internationalAff = FirebaseDatabase.getInstance().getReference("premium").child("pdf_internation_subject");
 
         adapter = new PremiumPdfAdapter(model, getApplicationContext());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
@@ -54,7 +53,7 @@ public class BanglaActivity extends AppCompatActivity {
         recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setAdapter(adapter);
 
-        reference_bangla.addListenerForSingleValueEvent(new ValueEventListener() {
+        reference_internationalAff.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -78,7 +77,7 @@ public class BanglaActivity extends AppCompatActivity {
         });
 
         /*database synced*/
-        reference_bangla.keepSynced(true);
+        reference_internationalAff.keepSynced(true);
 
      /*   add_ngo_job_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +85,5 @@ public class BanglaActivity extends AppCompatActivity {
                 startActivity(new Intent(NGOJobActivity.this, UploadNGOJobActivity.class));
             }
         });*/
-
     }
 }

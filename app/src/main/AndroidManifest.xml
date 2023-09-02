@@ -26,6 +26,30 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".premium_pdf.MathActivity"
+            android:exported="false" />
+        <activity
+            android:name=".premium_pdf.ComputerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".premium_pdf.GeneralScienceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".premium_pdf.InternationalAffActivity"
+            android:exported="false" />
+        <activity
+            android:name=".premium_pdf.BangladeshAffActivity"
+            android:exported="false" />
+        <activity
+            android:name=".premium_pdf.BangladeshAffairActivity"
+            android:exported="false" />
+        <activity
+            android:name=".premium_pdf.MentalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".premium_pdf.EnglishActivity"
+            android:exported="false" />
+        <activity
             android:name=".premium_pdf.BanglaActivity"
             android:exported="false" />
         <activity
