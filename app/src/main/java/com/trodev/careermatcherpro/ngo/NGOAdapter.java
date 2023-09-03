@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -71,6 +72,8 @@ public class NGOAdapter extends RecyclerView.Adapter<NGOAdapter.MyViewHolder> {
 
             }
         });
+        /*animation view with slider*/
+        holder.cardView.startAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(), R.anim.slider));
 
     }
 
@@ -92,6 +95,7 @@ public class NGOAdapter extends RecyclerView.Adapter<NGOAdapter.MyViewHolder> {
             sourceTv = itemView.findViewById(R.id.sourceTv);
             endDateTv = itemView.findViewById(R.id.endDateTv);
             imageIv = itemView.findViewById(R.id.imageIv);
+            cardView = itemView.findViewById(R.id.cardView);
 
         }
     }

@@ -28,7 +28,6 @@ import com.trodev.careermatcherpro.cv.CVActivity;
 import com.trodev.careermatcherpro.fragments.AboutFragment;
 import com.trodev.careermatcherpro.fragments.HomeFragment;
 import com.trodev.careermatcherpro.fragments.PdfFragment;
-import com.trodev.careermatcherpro.fragments.VideoFragment;
 
 import java.util.Objects;
 

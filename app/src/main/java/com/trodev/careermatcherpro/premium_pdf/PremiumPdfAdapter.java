@@ -4,9 +4,11 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.trodev.careermatcherpro.R;
@@ -36,6 +38,9 @@ public class PremiumPdfAdapter extends RecyclerView.Adapter<PremiumPdfAdapter.My
         PremiumPdfModel model = list.get(position);
         holder.detailsTv.setText(model.getPdfTitle());
 
+        /*animation view with slider*/
+        holder.cardView.startAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(), R.anim.slider));
+
     }
 
     @Override
@@ -45,10 +50,12 @@ public class PremiumPdfAdapter extends RecyclerView.Adapter<PremiumPdfAdapter.My
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView detailsTv;
+        CardView cardView;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             detailsTv = itemView.findViewById(R.id.detailsTv);
+            cardView = itemView.findViewById(R.id.cardView);
         }
     }
 }

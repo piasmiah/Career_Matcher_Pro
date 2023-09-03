@@ -1,4 +1,4 @@
-package com.trodev.careermatcherpro.bank_que;
+package com.trodev.careermatcherpro;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,46 +12,41 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
-import com.trodev.careermatcherpro.FullQuestionAnswerActivity;
-import com.trodev.careermatcherpro.R;
+public class TubeAdapter extends RecyclerView.Adapter<TubeAdapter.MyViewHolder> {
 
-import java.util.ArrayList;
-
-public class BankQueAdapter extends RecyclerView.Adapter<BankQueAdapter.MyViewHolder> {
-
-    ArrayList<BankQueModel> list;
+    List<TubeModel> list;
     Context context;
 
-    public BankQueAdapter(ArrayList<BankQueModel> list, Context context) {
+    public TubeAdapter(List<TubeModel> list, Context context) {
         this.list = list;
         this.context = context;
     }
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-        View view = LayoutInflater.from(context).inflate(R.layout.bank_item_layout, parent, false);
+    public TubeAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.bangla_tube_layout, parent, false);
         return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull TubeAdapter.MyViewHolder holder, int position) {
 
-        BankQueModel bcsModel = list.get(position);
+        TubeModel model = list.get(position);
 
-        holder.detailsTv.setText(bcsModel.getPdfTitle());
+        holder.titleTv.setText(model.getTitle());
+        holder.dateTv.setText(model.getDate());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent = new Intent(context, FullQuestionAnswerActivity.class);
-                intent.putExtra("pdfUrl", bcsModel.getPdfUrl());
+                Intent intent = new Intent(context, VideoActivity.class);
+                intent.putExtra("link", model.getLink());
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
-
             }
         });
 
@@ -67,14 +62,16 @@ public class BankQueAdapter extends RecyclerView.Adapter<BankQueAdapter.MyViewHo
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView detailsTv;
+        TextView titleTv, dateTv;
         CardView cardView;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            detailsTv = itemView.findViewById(R.id.detailsTv);
+            titleTv = itemView.findViewById(R.id.titleTv);
+            dateTv = itemView.findViewById(R.id.dateTv);
             cardView = itemView.findViewById(R.id.cardView);
+
         }
     }
 }
