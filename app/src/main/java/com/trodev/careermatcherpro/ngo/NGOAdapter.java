@@ -13,8 +13,8 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.trodev.careermatcherpro.FullJobDetailsActivity;
 import com.trodev.careermatcherpro.R;
+import com.trodev.careermatcherpro.ViewAllJobActivity;
 
 import java.util.ArrayList;
 
@@ -54,7 +54,7 @@ public class NGOAdapter extends RecyclerView.Adapter<NGOAdapter.MyViewHolder> {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(context, FullJobDetailsActivity.class);
+                Intent intent = new Intent(context, ViewAllJobActivity.class);
 
                 intent.putExtra("details", model.getPostdetails());
                 intent.putExtra("post", model.getPostname());

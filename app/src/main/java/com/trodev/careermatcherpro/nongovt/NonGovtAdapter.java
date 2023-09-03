@@ -12,8 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.trodev.careermatcherpro.activity.FullJobDetailsActivity;
 import com.trodev.careermatcherpro.R;
+import com.trodev.careermatcherpro.ViewAllJobActivity;
 
 import java.util.ArrayList;
 
@@ -54,7 +54,7 @@ public class NonGovtAdapter extends RecyclerView.Adapter<NonGovtAdapter.MyViewHo
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(context, FullJobDetailsActivity.class);
+                Intent intent = new Intent(context, ViewAllJobActivity.class);
 
                 intent.putExtra("details", model.getPostdetails());
                 intent.putExtra("post", model.getPostname());

@@ -1,4 +1,4 @@
-package com.trodev.careermatcherpro.activity;
+package com.trodev.careermatcherpro;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
@@ -8,7 +8,6 @@ import android.webkit.WebView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.barteksc.pdfviewer.PDFView;
-import com.trodev.careermatcherpro.R;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
