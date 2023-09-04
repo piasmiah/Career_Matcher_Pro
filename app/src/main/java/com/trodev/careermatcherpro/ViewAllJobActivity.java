@@ -1,5 +1,8 @@
 package com.trodev.careermatcherpro;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
@@ -12,14 +15,10 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
-import com.trodev.careermatcherpro.activity.ShowPDFActivity;
 
-public class FullJobDetailsActivity extends AppCompatActivity {
+public class ViewAllJobActivity extends AppCompatActivity {
 
     private TextView detailsTv, postNameTv, sourceTv, startDateTv, endDateTv, linkTv;
     ImageView imageView;
@@ -28,10 +27,11 @@ public class FullJobDetailsActivity extends AppCompatActivity {
     ProgressBar progressBar;
     CardView imageCard;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_full_job_details);
+        setContentView(R.layout.activity_view_all_job);
 
         /*action bar title*/
         getSupportActionBar().setTitle("বিস্তারিত দেখুন");
@@ -41,7 +41,7 @@ public class FullJobDetailsActivity extends AppCompatActivity {
         showPdfLl = findViewById(R.id.showPdfLl);
         progressBar = findViewById(R.id.progressBar);
         imageView = findViewById(R.id.imageIv);
-       // imageCard = findViewById(R.id.imageCard);
+        // imageCard = findViewById(R.id.imageCard);
 
         progressBar.setVisibility(View.VISIBLE);
         imageView.setVisibility(View.GONE);
@@ -71,7 +71,7 @@ public class FullJobDetailsActivity extends AppCompatActivity {
         showPdfLl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(FullJobDetailsActivity.this, ShowPDFActivity.class);
+                Intent intent = new Intent(ViewAllJobActivity.this, ShowPDFActivity.class);
                 intent.putExtra("pdfUrl", pdfUrl);
                 startActivity(intent);
             }

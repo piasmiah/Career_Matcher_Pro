@@ -41,6 +41,9 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
+    /*youtube*/
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0'
+
     /*one-signal dependency*/
     implementation 'com.onesignal:OneSignal:[5.0.0, 5.99.99]'
 

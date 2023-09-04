@@ -18,7 +18,7 @@ import com.trodev.careermatcherpro.R;
 
 import java.util.ArrayList;
 
-public class BangladeshAffActivity extends AppCompatActivity {
+public class BangladeshAffairActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     ProgressBar progressBar;

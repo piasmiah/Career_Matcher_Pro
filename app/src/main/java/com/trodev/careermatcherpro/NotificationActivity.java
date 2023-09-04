@@ -1,4 +1,4 @@
-package com.trodev.careermatcherpro.activity;
+package com.trodev.careermatcherpro;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,8 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.trodev.careermatcherpro.activity.FullJobDetailsActivity;
 import com.trodev.careermatcherpro.R;
+import com.trodev.careermatcherpro.ViewAllJobActivity;
 
 import java.util.ArrayList;
 
@@ -53,7 +54,7 @@ public class GovtAdapter extends RecyclerView.Adapter<GovtAdapter.MyViewHolder> 
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(context, FullJobDetailsActivity.class);
+                Intent intent = new Intent(context, ViewAllJobActivity.class);
 
                 intent.putExtra("details", model.getPostdetails());
                 intent.putExtra("post", model.getPostname());
@@ -70,6 +71,9 @@ public class GovtAdapter extends RecyclerView.Adapter<GovtAdapter.MyViewHolder> 
 
             }
         });
+
+        /*animation view with slider*/
+        holder.cardView.startAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(), R.anim.slider));
 
     }
 
@@ -91,6 +95,7 @@ public class GovtAdapter extends RecyclerView.Adapter<GovtAdapter.MyViewHolder> 
             sourceTv = itemView.findViewById(R.id.sourceTv);
             endDateTv = itemView.findViewById(R.id.endDateTv);
             imageIv = itemView.findViewById(R.id.imageIv);
+            cardView = itemView.findViewById(R.id.cardView);
 
 
         }

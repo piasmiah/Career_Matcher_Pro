@@ -25,6 +25,20 @@
         android:theme="@style/Theme.CareerMatcherPro"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
+        <activity
+            android:name=".VideoActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+            android:screenOrientation="landscape"
+            />
+        <activity
+            android:name=".BanglaVideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewAllJobActivity"
+            android:exported="true"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".premium_pdf.EthicsActivity"
             android:exported="false" />
@@ -42,9 +56,6 @@
             android:exported="false" />
         <activity
             android:name=".premium_pdf.InternationalAffActivity"
-            android:exported="false" />
-        <activity
-            android:name=".premium_pdf.BangladeshAffActivity"
             android:exported="false" />
         <activity
             android:name=".premium_pdf.BangladeshAffairActivity"
@@ -69,66 +80,59 @@
         <activity
             android:name=".bcs.BCSQuestionAnswerActivity"
             android:exported="false"
-            android:parentActivityName=".activity.MainActivity" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".FullQuestionAnswerActivity"
             android:exported="false" />
         <activity
             android:name=".bank_que.BankQuestionAnswerActivity"
             android:exported="false"
-            android:parentActivityName=".activity.MainActivity" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".bank.BankJobActivity"
             android:exported="false"
-            android:parentActivityName=".activity.MainActivity" />
-        <activity
-            android:name=".FullJobDetailsActivity"
-            android:exported="false" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ngo.NGOJobActivity"
             android:exported="false"
-            android:parentActivityName=".activity.MainActivity" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".teacher.TeacherJobActivity"
             android:exported="false"
-            android:parentActivityName=".activity.MainActivity" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".nongovt.NonGovtJobActivity"
             android:exported="false"
-            android:parentActivityName=".activity.MainActivity" />
+            android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".activity.ShowPDFActivity"
+            android:name=".ShowPDFActivity"
             android:exported="false"
-            android:parentActivityName=".activity.MainActivity" />
-        <activity
-            android:name=".activity.FullJobDetailsActivity"
-            android:exported="false"
-            android:parentActivityName=".activity.MainActivity" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".govt.GovtActivity"
             android:exported="false"
-            android:parentActivityName=".activity.MainActivity" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".cv.CVActivity"
             android:exported="false"
-            android:parentActivityName=".activity.MainActivity"
+            android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.WebsiteActivity"
+            android:name=".WebsiteActivity"
             android:exported="false"
-            android:parentActivityName=".activity.MainActivity"
+            android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.NotificationActivity"
+            android:name=".NotificationActivity"
             android:exported="false"
-            android:parentActivityName=".activity.MainActivity"
+            android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".MainActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.SplashActivity"
+            android:name=".SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

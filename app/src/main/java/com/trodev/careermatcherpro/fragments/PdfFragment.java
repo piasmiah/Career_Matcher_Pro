@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import com.google.android.material.card.MaterialCardView;
 import com.trodev.careermatcherpro.R;
 import com.trodev.careermatcherpro.premium_pdf.BanglaActivity;
-import com.trodev.careermatcherpro.premium_pdf.BangladeshAffActivity;
+import com.trodev.careermatcherpro.premium_pdf.BangladeshAffairActivity;
 import com.trodev.careermatcherpro.premium_pdf.ComputerActivity;
 import com.trodev.careermatcherpro.premium_pdf.EnglishActivity;
 import com.trodev.careermatcherpro.premium_pdf.EthicsActivity;
@@ -72,7 +72,7 @@ public class PdfFragment extends Fragment {
         bangladeshAffMC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getContext(), BangladeshAffActivity.class));
+                startActivity(new Intent(getContext(), BangladeshAffairActivity.class));
             }
         });
 
