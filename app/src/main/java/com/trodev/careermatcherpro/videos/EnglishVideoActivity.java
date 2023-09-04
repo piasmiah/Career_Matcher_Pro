@@ -1,6 +1,4 @@
-package com.trodev.careermatcherpro;
-
-import static java.security.AccessController.getContext;
+package com.trodev.careermatcherpro.videos;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,29 +14,20 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
+import com.trodev.careermatcherpro.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BanglaVideoActivity extends AppCompatActivity {
-
+public class EnglishVideoActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private List<TubeModel> list1 ;
     private TubeAdapter adapter;
     private DatabaseReference reference, dbRef;
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bangla_video);
-
-
-
+        setContentView(R.layout.activity_english_video);
 
         /*init recyclerview*/
         recyclerView = findViewById(R.id.recyclerView);
@@ -47,15 +36,15 @@ public class BanglaVideoActivity extends AppCompatActivity {
         // firebase
         reference = FirebaseDatabase.getInstance().getReference().child("career_tube");
 
-        bangla();
+        english();
 
 
 
     }
 
-    private void bangla() {
+    private void english() {
 
-        dbRef = reference.child("বাংলা");
+        dbRef = reference.child("ইংলিশ");
         dbRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -75,18 +64,17 @@ public class BanglaVideoActivity extends AppCompatActivity {
                         list1.add(data);
                     }
                     recyclerView.setHasFixedSize(true);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(BanglaVideoActivity.this));
-                    adapter = new TubeAdapter(list1,BanglaVideoActivity.this);
+                    recyclerView.setLayoutManager(new LinearLayoutManager(EnglishVideoActivity.this));
+                    adapter = new TubeAdapter(list1,EnglishVideoActivity.this);
                     recyclerView.setAdapter(adapter);
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(BanglaVideoActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(EnglishVideoActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
 
             }
         });
-
     }
 }

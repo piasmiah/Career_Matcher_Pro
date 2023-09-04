@@ -26,15 +26,33 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".EnglishVideoActivity"
+            android:name=".videos.BasicComputerVideoActivity"
             android:exported="false" />
         <activity
-            android:name=".VideoActivity"
+            android:name=".videos.PhotoshopVideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".videos.MSPointVideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".videos.MSWordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".videos.MSExcelVideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".videos.IllustratorVideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".videos.EnglishVideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".videos.VideoActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
             android:exported="false"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".BanglaVideoActivity"
+            android:name=".videos.BanglaVideoActivity"
             android:exported="false" />
         <activity
             android:name=".ViewAllJobActivity"
