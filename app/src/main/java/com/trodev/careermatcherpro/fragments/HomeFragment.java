@@ -21,6 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.trodev.careermatcherpro.R;
 import com.trodev.careermatcherpro.advice.AdviceAdapter;
 import com.trodev.careermatcherpro.advice.AdviceModel;
+import com.trodev.careermatcherpro.alljob.AllJobActivity;
 import com.trodev.careermatcherpro.bank.BankJobActivity;
 import com.trodev.careermatcherpro.bank_que.BankQuestionAnswerActivity;
 import com.trodev.careermatcherpro.bcs.BCSQuestionAnswerActivity;
@@ -34,7 +35,7 @@ import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
     RecyclerView recyclerView;
-    CardView govtMc, nongovtMc, teacherMc, bankMc, ngoMc, bankjobMc, bcsMc;
+    CardView govtMc, nongovtMc, teacherMc, bankMc, ngoMc, bankjobMc, bcsMc, allMc;
     ArrayList<AdviceModel> model;
     AdviceAdapter adapter;
     DatabaseReference reference;
@@ -57,6 +58,7 @@ public class HomeFragment extends Fragment {
         bankjobMc = view.findViewById(R.id.bankjobMc);
         bcsMc = view.findViewById(R.id.bcsMc);
         recyclerView = view.findViewById(R.id.recyclerView);
+        allMc = view.findViewById(R.id.allMc);
 
 
 
@@ -107,6 +109,13 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getContext(), BCSQuestionAnswerActivity.class));
+            }
+        });
+
+        allMc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), AllJobActivity.class));
             }
         });
 

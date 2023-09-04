@@ -25,13 +25,14 @@
         android:theme="@style/Theme.CareerMatcherPro"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-
+        <activity
+            android:name=".EnglishVideoActivity"
+            android:exported="false" />
         <activity
             android:name=".VideoActivity"
-            android:exported="false"
             android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
-            android:screenOrientation="landscape"
-            />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".BanglaVideoActivity"
             android:exported="false" />
@@ -77,6 +78,13 @@
             android:name=".cv.TemplateCVActivity"
             android:exported="false"
             android:parentActivityName=".cv.CVActivity" />
+        <activity
+            android:name=".FullJobDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".alljob.AllJobActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".bcs.BCSQuestionAnswerActivity"
             android:exported="false"
