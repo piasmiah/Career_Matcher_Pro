@@ -10,14 +10,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.trodev.careermatcherpro.BanglaVideoActivity;
-import com.trodev.careermatcherpro.EnglishVideoActivity;
+import com.trodev.careermatcherpro.videos.BanglaVideoActivity;
+import com.trodev.careermatcherpro.videos.BasicComputerVideoActivity;
+import com.trodev.careermatcherpro.videos.EnglishVideoActivity;
+import com.trodev.careermatcherpro.videos.IllustratorVideoActivity;
+import com.trodev.careermatcherpro.videos.MSExcelVideoActivity;
+import com.trodev.careermatcherpro.videos.MSPointVideoActivity;
+import com.trodev.careermatcherpro.videos.MSWordActivity;
+import com.trodev.careermatcherpro.videos.PhotoshopVideoActivity;
 import com.trodev.careermatcherpro.R;
 
 
 public class VideoFragment extends Fragment {
 
-    CardView banglaCv, englishCv;
+    CardView banglaCv, englishCv, illustratorCv, msExelCv, msWordCv, msPointCv, photoshopCv, basicComputerCv;
 
     public VideoFragment() {
         // Required empty public constructor
@@ -32,6 +38,12 @@ public class VideoFragment extends Fragment {
 
         banglaCv = view.findViewById(R.id.banglaCv);
         englishCv = view.findViewById(R.id.englishCv);
+        illustratorCv = view.findViewById(R.id.illustratorCv);
+        msExelCv = view.findViewById(R.id.msExelCv);
+        msWordCv = view.findViewById(R.id.msWordCv);
+        msPointCv = view.findViewById(R.id.msPointCv);
+        photoshopCv = view.findViewById(R.id.photoshopCv);
+        basicComputerCv = view.findViewById(R.id.basicComputerCv);
 
         banglaCv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +56,48 @@ public class VideoFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getContext(), EnglishVideoActivity.class));
+            }
+        });
+
+        illustratorCv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), IllustratorVideoActivity.class));
+            }
+        });
+
+        msExelCv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), MSExcelVideoActivity.class));
+            }
+        });
+
+        msWordCv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), MSWordActivity.class));
+            }
+        });
+
+        msPointCv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), MSPointVideoActivity.class));
+            }
+        });
+
+        photoshopCv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), PhotoshopVideoActivity.class));
+            }
+        });
+
+        basicComputerCv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), BasicComputerVideoActivity.class));
             }
         });
 

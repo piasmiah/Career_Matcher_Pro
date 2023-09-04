@@ -1,4 +1,4 @@
-package com.trodev.careermatcherpro;
+package com.trodev.careermatcherpro.videos;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,19 +14,22 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.trodev.careermatcherpro.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class EnglishVideoActivity extends AppCompatActivity {
+public class MSWordActivity extends AppCompatActivity {
+
     private RecyclerView recyclerView;
     private List<TubeModel> list1 ;
     private TubeAdapter adapter;
     private DatabaseReference reference, dbRef;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_english_video);
+        setContentView(R.layout.activity_msword_video);
 
         /*init recyclerview*/
         recyclerView = findViewById(R.id.recyclerView);
@@ -35,15 +38,13 @@ public class EnglishVideoActivity extends AppCompatActivity {
         // firebase
         reference = FirebaseDatabase.getInstance().getReference().child("career_tube");
 
-        english();
-
-
+        illustrator();
 
     }
 
-    private void english() {
+    private void illustrator() {
 
-        dbRef = reference.child("ইংলিশ");
+        dbRef = reference.child("এমএস_ওয়ার্ড");
         dbRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -56,22 +57,21 @@ public class EnglishVideoActivity extends AppCompatActivity {
                 else
                 {
 
-
                     recyclerView.setVisibility(View.VISIBLE);
                     for (DataSnapshot snapshot: dataSnapshot.getChildren()){
                         TubeModel data = snapshot.getValue(TubeModel.class); // eikhane sob student hobe teacher thakle
                         list1.add(data);
                     }
                     recyclerView.setHasFixedSize(true);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(EnglishVideoActivity.this));
-                    adapter = new TubeAdapter(list1,EnglishVideoActivity.this);
+                    recyclerView.setLayoutManager(new LinearLayoutManager(MSWordActivity.this));
+                    adapter = new TubeAdapter(list1,MSWordActivity.this);
                     recyclerView.setAdapter(adapter);
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(EnglishVideoActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MSWordActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
 
             }
         });

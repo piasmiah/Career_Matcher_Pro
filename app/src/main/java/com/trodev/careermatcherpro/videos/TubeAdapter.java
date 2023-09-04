@@ -1,4 +1,4 @@
-package com.trodev.careermatcherpro;
+package com.trodev.careermatcherpro.videos;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,8 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.trodev.careermatcherpro.R;
+
 import java.util.List;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class TubeAdapter extends RecyclerView.Adapter<TubeAdapter.MyViewHolder> {
 
