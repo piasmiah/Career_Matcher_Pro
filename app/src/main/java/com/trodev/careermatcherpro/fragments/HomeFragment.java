@@ -39,7 +39,6 @@ public class HomeFragment extends Fragment {
     ArrayList<AdviceModel> model;
     AdviceAdapter adapter;
     DatabaseReference reference;
-
     public HomeFragment() {
     }
 
@@ -160,7 +159,7 @@ public class HomeFragment extends Fragment {
         });
 
         /*database synced*/
-        reference.keepSynced(true);
+         reference.keepSynced(true);
 
     }
 }

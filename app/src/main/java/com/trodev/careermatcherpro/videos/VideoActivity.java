@@ -24,11 +24,6 @@ public class VideoActivity extends AppCompatActivity {
 
     YouTubePlayerView youTubePlayerView;
 
-  //  ExoPlayer player;
-
-  //  String link = "https://tempx.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/anandatv.stream/chunks.m3u8";
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,18 +31,6 @@ public class VideoActivity extends AppCompatActivity {
 
         /*action bar hide*/
         getSupportActionBar().hide();
-
-
-/*       StyledPlayerView playerView = findViewById(R.id.playerView);
-
-        player = new ExoPlayer.Builder(VideoActivity.this).build();
-
-        playerView.setPlayer(player);
-        MediaItem mediaItem = MediaItem.fromUri(videoId);
-        player.setMediaItem(mediaItem);
-        player.prepare();
-        player.setPlayWhenReady(true);*/
-
 
         youTubePlayerView = findViewById(R.id.tube);
 
@@ -61,14 +44,5 @@ public class VideoActivity extends AppCompatActivity {
         });
 
     }
-
-/*    protected void onStop() {
-
-        super.onStop();
-        player.setPlayWhenReady(false);
-        player.release();
-        player = null;
-
-    }*/
 
 }

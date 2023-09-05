@@ -44,8 +44,11 @@ dependencies {
     def multidex_version = "2.0.1"
     implementation "androidx.multidex:multidex:$multidex_version"
 
-    /*exo player*/
-    implementation 'com.google.android.exoplayer:exoplayer:2.18.7'
+    /*exoplayer*/
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.15.0'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.15.0'
+
+
 
     /*youtube*/
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0'

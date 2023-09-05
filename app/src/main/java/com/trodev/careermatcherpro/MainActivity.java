@@ -181,10 +181,6 @@ public class MainActivity extends AppCompatActivity {
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
             dialog.getWindow().setGravity(Gravity.BOTTOM);
-        } else if (itemId == R.id.menu_tube) {
-            Toast.makeText(this, "Career Matcher Pro Tube", Toast.LENGTH_SHORT).show();
-            // startActivity(new Intent(MainActivity.this, TicketManagerActivity.class));
-
         } else if (itemId == R.id.menu_notification) {
             Toast.makeText(this, "Notification", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(MainActivity.this, NotificationActivity.class));
@@ -193,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this, WebsiteActivity.class));
 
         } else if (itemId == R.id.menu_privacy) {
-            // startActivity(new Intent(MainActivity.this, PrivacyPolicyActivity.class));
+             startActivity(new Intent(MainActivity.this, PrivacyActivity.class));
             Toast.makeText(this, "Privacy Policy", Toast.LENGTH_SHORT).show();
         } else if (itemId == R.id.menu_apps) {
             Toast.makeText(this, "Our Apps", Toast.LENGTH_SHORT).show();
@@ -208,6 +204,10 @@ public class MainActivity extends AppCompatActivity {
         } else if (itemId == R.id.menu_package) {
             Toast.makeText(this, "Premium Packages", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(MainActivity.this, PremiumPackagesActivity.class));
+        } else if (itemId == R.id.menu_share) {
+            Toast.makeText(this, "Share our apps", Toast.LENGTH_SHORT).show();
+        } else if (itemId == R.id.menu_rate) {
+            Toast.makeText(this, "Rate us", Toast.LENGTH_SHORT).show();
         }
 
         return super.onOptionsItemSelected(item);

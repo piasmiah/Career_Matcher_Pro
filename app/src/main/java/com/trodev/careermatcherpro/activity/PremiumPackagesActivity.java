@@ -24,6 +24,9 @@ public class PremiumPackagesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_premium_packages);
 
+        getSupportActionBar().setTitle("Packages");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         /*init views*/
         detailsTv = findViewById(R.id.detailsTv);
         basic_layout = findViewById(R.id.basic_layout);

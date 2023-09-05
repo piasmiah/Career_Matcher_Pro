@@ -25,9 +25,16 @@
         android:theme="@style/Theme.CareerMatcherPro"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
+        <activity
+            android:name=".PrivacyActivity"
+            android:exported="true"
+            android:parentActivityName=".MainActivity"
+            />
         <activity
             android:name=".activity.PremiumPackagesActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".videos.BasicComputerVideoActivity"
             android:exported="false" />
@@ -170,6 +177,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
