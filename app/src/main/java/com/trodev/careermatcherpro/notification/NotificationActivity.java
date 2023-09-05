@@ -1,4 +1,4 @@
-package com.trodev.careermatcherpro.premium_pdf;
+package com.trodev.careermatcherpro.notification;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,43 +18,42 @@ import com.trodev.careermatcherpro.R;
 
 import java.util.ArrayList;
 
-public class ComputerActivity extends AppCompatActivity {
-    /*private FloatingActionButton add_ngo_job_btn;*/
+public class NotificationActivity extends AppCompatActivity {
+
     RecyclerView recyclerView;
     ProgressBar progressBar;
-
-    ArrayList<PremiumModel> model;
-    PremiumPdfAdapter adapter;
+    DatabaseReference reference;
+    ArrayList<NoticeModel> model;
+    NoticeAdapter adapter;
     FirebaseDatabase database;
-    DatabaseReference reference_computer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_computer);
+        setContentView(R.layout.activity_notification);
 
-        /*init action bar*/
-        getSupportActionBar().setTitle("প্রিমিয়াম পিডিএফ");
+        /*action bar title and back button*/
+        getSupportActionBar().setTitle("Notification");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        /*add_ngo_job_btn = findViewById(R.id.add_ngo_job_btn);*/
         recyclerView = findViewById(R.id.recyclerView);
         progressBar = findViewById(R.id.progressBar);
-
         progressBar.setVisibility(View.VISIBLE);
 
         model = new ArrayList<>();
 
-        // database = FirebaseDatabase.getInstance();
 
-        reference_computer = FirebaseDatabase.getInstance().getReference("premium").child("pdf_computer");
-
-        adapter = new PremiumPdfAdapter(model, getApplicationContext());
+        adapter = new NoticeAdapter(model, getApplicationContext());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setAdapter(adapter);
 
-        reference_computer.addListenerForSingleValueEvent(new ValueEventListener() {
+        /*database path*/
+        reference = FirebaseDatabase.getInstance().getReference().child("notice");
+
+
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -62,9 +61,8 @@ public class ComputerActivity extends AppCompatActivity {
 
                     progressBar.setVisibility(View.GONE);
 
-                    PremiumModel premiumPdfModel = dataSnapshot.getValue(PremiumModel.class);
-                    model.add(0, premiumPdfModel);
-
+                    NoticeModel noticeModel = dataSnapshot.getValue(NoticeModel.class);
+                    model.add(0, noticeModel);
                 }
 
                 adapter.notifyDataSetChanged();
@@ -77,14 +75,7 @@ public class ComputerActivity extends AppCompatActivity {
             }
         });
 
-        /*database synced*/
-        reference_computer.keepSynced(true);
+        reference.keepSynced(true);
 
-     /*   add_ngo_job_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(NGOJobActivity.this, UploadNGOJobActivity.class));
-            }
-        });*/
     }
 }

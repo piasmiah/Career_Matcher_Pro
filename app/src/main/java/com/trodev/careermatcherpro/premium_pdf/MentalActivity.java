@@ -24,7 +24,7 @@ public class MentalActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ProgressBar progressBar;
 
-    ArrayList<PremiumPdfModel> model;
+    ArrayList<PremiumModel> model;
     PremiumPdfAdapter adapter;
     FirebaseDatabase database;
     DatabaseReference reference_mental;
@@ -63,7 +63,7 @@ public class MentalActivity extends AppCompatActivity {
 
                     progressBar.setVisibility(View.GONE);
 
-                    PremiumPdfModel premiumPdfModel = dataSnapshot.getValue(PremiumPdfModel.class);
+                    PremiumModel premiumPdfModel = dataSnapshot.getValue(PremiumModel.class);
                     model.add(0, premiumPdfModel);
 
                 }

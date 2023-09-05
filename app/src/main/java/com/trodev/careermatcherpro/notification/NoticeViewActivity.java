@@ -1,6 +1,8 @@
-package com.trodev.careermatcherpro.activity;
+package com.trodev.careermatcherpro.notification;
 
-import android.content.Intent;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -12,81 +14,47 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 import com.trodev.careermatcherpro.R;
 
-public class FullJobDetailsActivity extends AppCompatActivity {
+public class NoticeViewActivity extends AppCompatActivity {
 
-    private TextView detailsTv, postNameTv, sourceTv, startDateTv, endDateTv, linkTv;
+    private TextView detailsTv, jobTypeTv;
     ImageView imageView;
-    String details, name, source, sDate, eDate, link, image, pdfUrl;
-    LinearLayout showPdfLl;
+    String details, type, image;
     ProgressBar progressBar;
     CardView imageCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_full_job_details);
+        setContentView(R.layout.activity_notice_view);
 
         /*action bar title*/
         getSupportActionBar().setTitle("বিস্তারিত দেখুন");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        // pdfView = findViewById(R.id.pdfView);
-        showPdfLl = findViewById(R.id.showPdfLl);
-        progressBar = findViewById(R.id.progressBar);
+
+        /*init views*/
+        detailsTv = findViewById(R.id.detailsTv);
+        jobTypeTv = findViewById(R.id.jobTypeTv);
         imageView = findViewById(R.id.imageIv);
-       // imageCard = findViewById(R.id.imageCard);
+        progressBar = findViewById(R.id.progressBar);
+
 
         progressBar.setVisibility(View.VISIBLE);
         imageView.setVisibility(View.GONE);
 
-
-        /*init views*/
-        detailsTv = findViewById(R.id.detailsTv);
-        postNameTv = findViewById(R.id.postNameTv);
-        sourceTv = findViewById(R.id.sourceTv);
-        startDateTv = findViewById(R.id.startDateTv);
-        endDateTv = findViewById(R.id.endDateTv);
-        linkTv = findViewById(R.id.linkTv);
-        imageView = findViewById(R.id.imageIv);
-
         // get data from adapter
         details = getIntent().getStringExtra("details");
-        name = getIntent().getStringExtra("post");
+        type = getIntent().getStringExtra("type");
         image = getIntent().getStringExtra("image");
-        source = getIntent().getStringExtra("source");
-        sDate = getIntent().getStringExtra("sdate");
-        eDate = getIntent().getStringExtra("edate");
-        link = getIntent().getStringExtra("link");
-
-
-        pdfUrl = getIntent().getStringExtra("pdfUrl");
-
-        /*set on click listener*/
-        showPdfLl.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(FullJobDetailsActivity.this, ShowPDFActivity.class);
-                intent.putExtra("pdfUrl", pdfUrl);
-                startActivity(intent);
-            }
-        });
-
-        /*set data on activities views*/
-        detailsTv.setText(details);
-        postNameTv.setText(name);
-        sourceTv.setText(source);
-        startDateTv.setText(sDate);
-        endDateTv.setText(eDate);
-        linkTv.setText(link);
-
         simulateDataLoading();
+
+        detailsTv.setText(details);
+        jobTypeTv.setText(type);
+
     }
 
     private void simulateDataLoading() {

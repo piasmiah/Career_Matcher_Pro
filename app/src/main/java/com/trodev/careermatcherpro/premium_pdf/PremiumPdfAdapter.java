@@ -1,6 +1,7 @@
 package com.trodev.careermatcherpro.premium_pdf;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,15 +13,16 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.trodev.careermatcherpro.R;
+import com.trodev.careermatcherpro.activity.ShowPDFActivity;
 
 import java.util.ArrayList;
 
 
 public class PremiumPdfAdapter extends RecyclerView.Adapter<PremiumPdfAdapter.MyViewHolder>{
-    ArrayList<PremiumPdfModel> list;
+    ArrayList<PremiumModel> list;
     Context context;
 
-    public PremiumPdfAdapter(ArrayList<PremiumPdfModel> list, Context context) {
+    public PremiumPdfAdapter(ArrayList<PremiumModel> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -35,8 +37,19 @@ public class PremiumPdfAdapter extends RecyclerView.Adapter<PremiumPdfAdapter.My
     @Override
     public void onBindViewHolder(@NonNull PremiumPdfAdapter.MyViewHolder holder, int position) {
 
-        PremiumPdfModel model = list.get(position);
+        PremiumModel model = list.get(position);
         holder.detailsTv.setText(model.getPdfTitle());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ShowPDFActivity.class);
+                intent.putExtra("pdfUrl", model.getPdfLink());
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+
+            }
+        });
 
         /*animation view with slider*/
         holder.cardView.startAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(), R.anim.slider));
