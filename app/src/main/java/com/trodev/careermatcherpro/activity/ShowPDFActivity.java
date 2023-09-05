@@ -1,4 +1,4 @@
-package com.trodev.careermatcherpro;
+package com.trodev.careermatcherpro.activity;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
@@ -8,6 +8,7 @@ import android.webkit.WebView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.barteksc.pdfviewer.PDFView;
+import com.trodev.careermatcherpro.R;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -15,30 +16,38 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class FullQuestionAnswerActivity extends AppCompatActivity {
-
-    private WebView webView;
-    String pdfUrl;
-    ProgressDialog progressDialog;
+public class ShowPDFActivity extends AppCompatActivity {
+    private String pdfUrl;
     PDFView pdfView;
+    ProgressDialog progressDialog;
+    private WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_full_question_answer);
+        setContentView(R.layout.activity_show_pdfactivity);
 
         /*action bar title*/
         getSupportActionBar().setTitle("পিডিএফ দেখুন");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        pdfView = findViewById(R.id.pdfView);
-
-        /*pdf url*/
+        /*get data on govtAdapter, NonGovtAdapter, TeacherAdapter*/
         pdfUrl = getIntent().getStringExtra("pdfUrl");
 
+        /*web view*/
+        //  webView = findViewById(R.id.webView);
+        pdfView = findViewById(R.id.pdfView);
+
+
+/*        WebSettings settings = webView.getSettings();
+        settings.setJavaScriptEnabled(true);
+        webView.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_OVERLAY);
+        webView.getSettings().setBuiltInZoomControls(true);
+        webView.getSettings().setUseWideViewPort(true);
+        webView.getSettings().setLoadWithOverviewMode(true);*/
 
         /*progress dialog show and init*/
-        progressDialog = new ProgressDialog(FullQuestionAnswerActivity.this);
+        progressDialog = new ProgressDialog(ShowPDFActivity.this);
         progressDialog.setIndeterminate(true);
         progressDialog.setCancelable(false);
         progressDialog = ProgressDialog
@@ -46,14 +55,7 @@ public class FullQuestionAnswerActivity extends AppCompatActivity {
                         "পিডিএফ লোড হচ্ছে",
                         "কিছুক্ষণ অপেক্ষা করুন");
         progressDialog.show();
-
-/*        webView = findViewById(R.id.webView);
-        WebSettings settings = webView.getSettings();
-        settings.setJavaScriptEnabled(true);
-        webView.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_OVERLAY);
-        webView.getSettings().setBuiltInZoomControls(true);
-        webView.getSettings().setUseWideViewPort(true);
-        webView.getSettings().setLoadWithOverviewMode(true);
+/*
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -70,14 +72,13 @@ public class FullQuestionAnswerActivity extends AppCompatActivity {
 
             @Override
             public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-                Toast.makeText(FullQuestionAnswerActivity.this, "Error:" + description, Toast.LENGTH_SHORT).show();
+                Toast.makeText(ShowPDFActivity.this, "Error:" + description, Toast.LENGTH_SHORT).show();
             }
         });
 
         *//*load web*//*
         webView.loadUrl(pdfUrl);*/
 
-        /*pdf view loading*/
         new PdfDownload().execute(pdfUrl);
 
     }
@@ -108,12 +109,7 @@ public class FullQuestionAnswerActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(InputStream inputStream) {
             progressDialog.hide();
-            pdfView.fromStream(inputStream)
-                    .enableSwipe(true)
-                    .swipeHorizontal(false)
-                    .enableDoubletap(true)
-                    .defaultPage(0)
-                    .load();
+            pdfView.fromStream(inputStream).load();
         }
     }
 }

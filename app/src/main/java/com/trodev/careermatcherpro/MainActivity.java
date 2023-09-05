@@ -24,6 +24,8 @@ import android.widget.Toast;
 import com.google.android.material.navigation.NavigationView;
 import com.onesignal.OneSignal;
 import com.onesignal.debug.LogLevel;
+import com.trodev.careermatcherpro.activity.PremiumPackagesActivity;
+import com.trodev.careermatcherpro.activity.WebsiteActivity;
 import com.trodev.careermatcherpro.cv.CVActivity;
 import com.trodev.careermatcherpro.fragments.AboutFragment;
 import com.trodev.careermatcherpro.fragments.HomeFragment;
@@ -203,6 +205,9 @@ public class MainActivity extends AppCompatActivity {
         } else if (itemId == R.id.menu_cv) {
             Toast.makeText(this, "Curriculum Vitae Maker", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(MainActivity.this, CVActivity.class));
+        } else if (itemId == R.id.menu_package) {
+            Toast.makeText(this, "Premium Packages", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(MainActivity.this, PremiumPackagesActivity.class));
         }
 
         return super.onOptionsItemSelected(item);

@@ -13,7 +13,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.trodev.careermatcherpro.FullJobDetailsActivity;
+import com.trodev.careermatcherpro.activity.FullJobDetailsActivity;
 import com.trodev.careermatcherpro.R;
 
 import java.util.ArrayList;

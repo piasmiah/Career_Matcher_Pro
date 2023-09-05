@@ -1,10 +1,13 @@
-package com.trodev.careermatcherpro;
+package com.trodev.careermatcherpro.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.trodev.careermatcherpro.MainActivity;
+import com.trodev.careermatcherpro.R;
 
 public class SplashActivity extends AppCompatActivity {
 

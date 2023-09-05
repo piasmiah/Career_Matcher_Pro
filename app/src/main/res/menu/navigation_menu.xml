@@ -29,6 +29,11 @@
         android:title="Website" />
 
     <item
+        android:id="@+id/menu_package"
+        android:icon="@drawable/ic_packages"
+        android:title="Premium package" />
+
+    <item
         android:id="@+id/menu_privacy"
         android:icon="@drawable/ic_privacy"
         android:title="Privacy Policy" />

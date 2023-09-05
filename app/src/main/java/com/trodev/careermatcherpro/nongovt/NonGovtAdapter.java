@@ -14,7 +14,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.trodev.careermatcherpro.R;
-import com.trodev.careermatcherpro.ViewAllJobActivity;
+import com.trodev.careermatcherpro.activity.ViewAllJobActivity;
 
 import java.util.ArrayList;
 

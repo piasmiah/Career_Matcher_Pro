@@ -1,4 +1,4 @@
-package com.trodev.careermatcherpro;
+package com.trodev.careermatcherpro.activity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -17,6 +17,7 @@ import androidx.cardview.widget.CardView;
 
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
+import com.trodev.careermatcherpro.R;
 
 public class FullJobDetailsActivity extends AppCompatActivity {
 
