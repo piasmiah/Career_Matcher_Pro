@@ -30,6 +30,7 @@ public class PhotoshopVideoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photoshop_video);
+        getSupportActionBar().setTitle("ফটোশপ কোর্স");
 
         /*init recyclerview*/
         recyclerView = findViewById(R.id.recyclerView);

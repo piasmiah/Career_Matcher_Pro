@@ -74,34 +74,44 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".premium_pdf.EthicsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".premium_pdf.GeographyActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".premium_pdf.MathActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".premium_pdf.ComputerActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".premium_pdf.GeneralScienceActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".premium_pdf.InternationalAffActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".premium_pdf.BangladeshAffairActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".premium_pdf.MentalActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".premium_pdf.EnglishActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".premium_pdf.BanglaActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".cv.TemplateViewActivity"
             android:exported="false"
@@ -112,7 +122,8 @@
             android:parentActivityName=".cv.CVActivity" />
         <activity
             android:name=".activity.FullJobDetailsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".alljob.AllJobActivity"/>
         <activity
             android:name=".alljob.AllJobActivity"
             android:exported="false"
@@ -123,7 +134,8 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".activity.FullQuestionAnswerActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".bcs.BCSQuestionAnswerActivity"/>
         <activity
             android:name=".bank_que.BankQuestionAnswerActivity"
             android:exported="false"

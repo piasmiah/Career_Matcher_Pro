@@ -30,6 +30,7 @@ public class MSExcelVideoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_msexcel_video);
+        getSupportActionBar().setTitle("এমএস_এক্সেল কোর্স");
 
 
         /*init recyclerview*/
