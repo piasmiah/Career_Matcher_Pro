@@ -103,7 +103,9 @@
                         android:layout_marginTop="3dp"
                         android:fontFamily="@font/kalpurush"
                         android:text="সিভির ডিজাইন ফাইল দেখুন "
-                        android:textColor="@color/black" />
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        />
 
                 </LinearLayout>
 
@@ -125,7 +127,6 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -140,7 +141,7 @@
                     android:layout_height="2dp"
                     android:background="@color/app_color" />
 
-                <!--নাম-->
+                <!--পেমেন্ট-->
                 <com.google.android.material.textfield.TextInputLayout
 
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -156,13 +157,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/kalpurush"
-                        android:hint="পেমেন্ট মেথড"
+                        android:hint="Payment Method"
                         android:inputType="textMultiLine|text"
                         android:textColor="@color/black" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!--নাম-->
+                <!--ট্রানজেকশন-->
                 <com.google.android.material.textfield.TextInputLayout
 
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -178,7 +179,29 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/kalpurush"
-                        android:hint="ট্রানজেকশন আইডি নাম্বার"
+                        android:hint="Transaction ID"
+                        android:inputType="textMultiLine|text"
+                        android:textColor="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--টেমপ্লেট-->
+                <com.google.android.material.textfield.TextInputLayout
+
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/templateEt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/kalpurush"
+                        android:hint="Template no"
                         android:inputType="textMultiLine|text"
                         android:textColor="@color/black" />
 
@@ -207,6 +230,18 @@
             android:textSize="16sp"
             android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/statusTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Pending"
+            android:textColor="@color/white"
+            android:textSize="5sp"
+            android:textStyle="bold" />
+
         <!--নাম-->
         <com.google.android.material.textfield.TextInputLayout
 
@@ -222,12 +257,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/kalpurush"
-                android:hint="আপনার সম্পূর্ণ নাম (ইংরেজী ও বাংলা)"
+                android:hint="Full Name (English &amp; Bangla)"
                 android:inputType="textMultiLine|text"
                 android:textColor="@color/black" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--নাম-->
+        <!--পিতা মাতা-->
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -241,12 +277,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/kalpurush"
-                android:hint="পিতার এবং মাতার নাম (ইংরেজী ও বাংলা)"
+                android:hint="Father &amp; Mother name"
                 android:inputType="textMultiLine|text"
                 android:textColor="@color/black" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--নাম-->
+        <!--থিকাকানা-->
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -260,12 +297,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/kalpurush"
-                android:hint="ঠিকানা (স্থায়ী ও অস্থায়ী)"
+                android:hint="Address (parmanent &amp; present)"
                 android:inputType="textMultiLine|text"
                 android:textColor="@color/black" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--নাম-->
+        <!--ইমেইল-->
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -279,12 +317,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/kalpurush"
-                android:hint="জিমেইল"
+                android:hint="E-mail"
                 android:inputType="textMultiLine|text"
                 android:textColor="@color/black" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--নাম-->
+        <!--মোবাইল-->
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -298,12 +337,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/kalpurush"
-                android:hint="মোবাইল নাম্বার"
-                android:inputType="textMultiLine|text"
+                android:hint="Phone Number"
+                android:inputType="phone"
                 android:textColor="@color/black" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--নাম-->
+        <!--স্কিল-->
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -317,12 +357,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/kalpurush"
-                android:hint="স্কিল (কম্পিউটার, ওয়ার্ড, এক্সেল, ইত্যাদি)"
+                android:hint="Skill (computer, word, excel etc)"
                 android:inputType="textMultiLine|text"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--নাম-->
+        <!--শিক্ষাগত যোগ্যতা-->
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -336,12 +376,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/kalpurush"
-                android:hint="শিক্ষাগত যোগ্যতা (বোর্ড, সাল, গ্রেড, শিক্ষাপ্রতিষ্ঠানের নাম)"
+                android:hint="Education qualification (name, board, grade, institute, passing year)"
                 android:inputType="textMultiLine|text"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--নাম-->
+        <!--Nationality-->
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -355,12 +395,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/kalpurush"
-                android:hint="জাতীয়তা"
+                android:hint="Nationality"
                 android:inputType="textMultiLine|text"
                 android:textColor="@color/black" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--নাম-->
+        <!--Sex-->
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -374,12 +415,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/kalpurush"
-                android:hint="লিঙ্গ"
+                android:hint="Sex (male, female, other's)"
                 android:inputType="textMultiLine|text"
                 android:textColor="@color/black" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--নাম-->
+        <!--Religion, Blood Group, Marital Status-->
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -393,12 +435,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/kalpurush"
-                android:hint="ধর্ম, বৈবাহিক অবস্থা, রক্তের গ্রুপ"
+                android:hint="Religion, Blood Group, Marital Status"
                 android:inputType="textMultiLine|text"
                 android:textColor="@color/black" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--নাম-->
+        <!--Language skill-->
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -412,11 +455,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/kalpurush"
-                android:hint="ভাষা যোগ্যতা"
+                android:hint="Language skill"
                 android:inputType="textMultiLine|text"
                 android:textColor="@color/black" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!--এক্সট্রা কারিকুলাম-->
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -430,11 +475,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/kalpurush"
-                android:hint="এক্সট্রা কারিকুলাম"
+                android:hint="Extra curriculum"
                 android:inputType="textMultiLine|text"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!--কোন ট্রেইনিং সার্টিফিকেট (নাম লিখুন)-->
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -448,11 +494,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/kalpurush"
-                android:hint="কোন ট্রেইনিং সার্টিফিকেট (নাম লিখুন)"
+                android:hint="Any training certificate"
                 android:inputType="textMultiLine|text"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!--একপেরিয়েন্স (কোন প্রতিষ্ঠানে কর্মরত ছিলেন কিনা )-->
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -466,11 +513,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/kalpurush"
-                android:hint="একপেরিয়েন্স (কোন প্রতিষ্ঠানে কর্মরত ছিলেন কিনা )"
+                android:hint="Experience (if you have any job experience)"
                 android:inputType="textMultiLine|text"
                 android:textColor="@color/black" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!--সোশ্যাল মিডিয়ার প্রোফাইল লিংক দিন-->
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -484,11 +533,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/kalpurush"
-                android:hint="সোশ্যাল মিডিয়ার প্রোফাইল লিংক দিন "
+                android:hint="Social media profile link"
                 android:inputType="textMultiLine|text"
                 android:textColor="@color/black" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!--button-->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/upload_btn"
             android:layout_width="match_parent"

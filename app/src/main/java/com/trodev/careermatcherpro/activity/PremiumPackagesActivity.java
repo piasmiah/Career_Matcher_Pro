@@ -3,6 +3,7 @@ package com.trodev.careermatcherpro.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.LayoutTransition;
+import android.content.Intent;
 import android.os.Bundle;
 import android.transition.AutoTransition;
 import android.transition.TransitionManager;
@@ -12,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.trodev.careermatcherpro.R;
+import com.trodev.careermatcherpro.payment.PackageBuyActivity;
 
 public class PremiumPackagesActivity extends AppCompatActivity {
 
@@ -50,6 +52,34 @@ public class PremiumPackagesActivity extends AppCompatActivity {
         gold_layout.getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
         platinum_layout.getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
         master_layout.getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
+
+        basic_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PremiumPackagesActivity.this, PackageBuyActivity.class));
+            }
+        });
+
+        gold_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PremiumPackagesActivity.this, PackageBuyActivity.class));
+            }
+        });
+
+        platinum_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PremiumPackagesActivity.this, PackageBuyActivity.class));
+            }
+        });
+
+        master_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PremiumPackagesActivity.this, PackageBuyActivity.class));
+            }
+        });
 
     }
 
@@ -91,4 +121,5 @@ public class PremiumPackagesActivity extends AppCompatActivity {
         master_btn.setVisibility(View.VISIBLE);
 
     }
+
 }

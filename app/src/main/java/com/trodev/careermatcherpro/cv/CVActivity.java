@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -47,8 +48,9 @@ public class CVActivity extends AppCompatActivity {
     TextInputEditText payment_methodET, transactionEt;
     TextInputEditText nameEt, parentsEt, addressEt, gmailEt, mobileEt, skillEt, eduEt, nationalityEt,
             genderEt, religion_married_bloodET, langugae_skillET, extra_curriculmnET,
-            training_certificateET, experienceET, social_mediaET;
+            training_certificateET, experienceET, social_mediaET, templateEt;
 
+    TextView statusTv;
     ProgressDialog progressDialog;
 
     LinearLayout templateLl;
@@ -95,6 +97,7 @@ public class CVActivity extends AppCompatActivity {
         /*init all widget*/
         payment_methodET = findViewById(R.id.payment_method);
         transactionEt = findViewById(R.id.transactionEt);
+        templateEt = findViewById(R.id.templateEt);
         nameEt = findViewById(R.id.nameEt);
         parentsEt = findViewById(R.id.parentsEt);
         addressEt = findViewById(R.id.addressEt);
@@ -110,6 +113,7 @@ public class CVActivity extends AppCompatActivity {
         training_certificateET = findViewById(R.id.training_certificate);
         experienceET = findViewById(R.id.experience);
         social_mediaET = findViewById(R.id.social_media);
+        statusTv = findViewById(R.id.statusTv);
 
         // #######################################
         /*set on click listener*/
@@ -177,9 +181,12 @@ public class CVActivity extends AppCompatActivity {
                         userModel.setPayment_method(payment_methodET.getText().toString().trim());
                         userModel.setTransaction_id(transactionEt.getText().toString().trim());
 
-                        /*user information upload*/
+                        /*user payment and transaction information*/
                         userModel.setName(nameEt.getText().toString().trim());
                         userModel.setParents(parentsEt.getText().toString().trim());
+                        userModel.setTemplate(templateEt.getText().toString().trim());
+
+                        /*personal information*/
                         userModel.setAddress(addressEt.getText().toString().trim());
                         userModel.setGmail(gmailEt.getText().toString().trim());
                         userModel.setMobile(mobileEt.getText().toString().trim());
@@ -193,19 +200,17 @@ public class CVActivity extends AppCompatActivity {
                         userModel.setTraining_certificate(training_certificateET.getText().toString().trim());
                         userModel.setExperience(experienceET.getText().toString().trim());
                         userModel.setSocial_media(social_mediaET.getText().toString().trim());
+                        userModel.setStatustv(statusTv.getText().toString().trim());
 
 
                         database.getReference().child("user_cv").push().setValue(userModel)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void unused) {
+
                                         progressDialog.hide();
-
-/*                                        Intent intent = new Intent(UploadGovtJobActivity.this, GovtJobActivity.class);
-                                        startActivity(intent);
-                                        finishAffinity();*/
-
                                         Toast.makeText(CVActivity.this, "আপলোড সম্পূর্ণ হয়েছে !!!", Toast.LENGTH_SHORT).show();
+
                                     }
                                 })
                                 .addOnFailureListener(new OnFailureListener() {

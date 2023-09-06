@@ -22,7 +22,6 @@ import android.view.Window;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
-import com.karumi.dexter.BuildConfig;
 import com.onesignal.OneSignal;
 import com.onesignal.debug.LogLevel;
 import com.trodev.careermatcherpro.activity.PremiumPackagesActivity;
@@ -183,49 +182,41 @@ public class MainActivity extends AppCompatActivity {
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
             dialog.getWindow().setGravity(Gravity.BOTTOM);
-        }
-        else if (itemId == R.id.menu_notification) {
+        } else if (itemId == R.id.menu_notification) {
             Toast.makeText(this, "Notification", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(MainActivity.this, NotificationActivity.class));
-        }
-        else if (itemId == R.id.menu_website) {
+        } else if (itemId == R.id.menu_website) {
             Toast.makeText(this, "Website", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(MainActivity.this, WebsiteActivity.class));
 
-        }
-        else if (itemId == R.id.menu_privacy) {
-             startActivity(new Intent(MainActivity.this, PrivacyActivity.class));
+        } else if (itemId == R.id.menu_privacy) {
+            startActivity(new Intent(MainActivity.this, PrivacyActivity.class));
             Toast.makeText(this, "Privacy Policy", Toast.LENGTH_SHORT).show();
-        }
-        else if (itemId == R.id.menu_apps) {
+        } else if (itemId == R.id.menu_apps) {
             Toast.makeText(this, "Our Apps", Toast.LENGTH_SHORT).show();
             try {
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/dev?id=6580660399707616800")));
             } catch (ActivityNotFoundException e) {
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/dev?id=6580660399707616800")));
             }
-        }
-        else if (itemId == R.id.menu_cv) {
+        } else if (itemId == R.id.menu_cv) {
             Toast.makeText(this, "Curriculum Vitae Maker", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(MainActivity.this, CVActivity.class));
-        }
-        else if (itemId == R.id.menu_package) {
+        } else if (itemId == R.id.menu_package) {
             Toast.makeText(this, "Premium Packages", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(MainActivity.this, PremiumPackagesActivity.class));
-        }
-        else if (itemId == R.id.menu_share) {
+        } else if (itemId == R.id.menu_share) {
 
             Toast.makeText(this, "Share our apps", Toast.LENGTH_SHORT).show();
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
             shareIntent.setType("text/plain");
             shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Career Matcher Pro");
             String shareMessage = "\nCareer Matcher Pro App Download now\n\n";
-            shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID + "\n\n";
+            shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + getApplicationContext().getPackageName() + "\n\n";
             shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
             startActivity(Intent.createChooser(shareIntent, "choose one"));
 
-        }
-        else if (itemId == R.id.menu_rate) {
+        } else if (itemId == R.id.menu_rate) {
             try {
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getPackageName())));
                 Toast.makeText(this, "Rate us", Toast.LENGTH_SHORT).show();
