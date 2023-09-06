@@ -6,13 +6,13 @@ public class UserModel {
     String name, parents, address, gmail, mobile, skills, educations, nationality,
     gender, religion_married_blood, languages, extra_curriculmn, training_certificate,
     experience, social_media;
-
+    String statustv, template;
     String image;
 
     public UserModel() {
     }
 
-    public UserModel(String payment_method, String transaction_id, String name, String parents, String address, String gmail, String mobile, String skills, String educations, String nationality, String gender, String religion_married_blood, String languages, String extra_curriculmn, String training_certificate, String experience, String social_media, String image) {
+    public UserModel(String payment_method, String transaction_id, String name, String parents, String address, String gmail, String mobile, String skills, String educations, String nationality, String gender, String religion_married_blood, String languages, String extra_curriculmn, String training_certificate, String experience, String social_media, String statustv, String template, String image) {
         this.payment_method = payment_method;
         this.transaction_id = transaction_id;
         this.name = name;
@@ -30,6 +30,8 @@ public class UserModel {
         this.training_certificate = training_certificate;
         this.experience = experience;
         this.social_media = social_media;
+        this.statustv = statustv;
+        this.template = template;
         this.image = image;
     }
 
@@ -167,6 +169,22 @@ public class UserModel {
 
     public void setSocial_media(String social_media) {
         this.social_media = social_media;
+    }
+
+    public String getStatustv() {
+        return statustv;
+    }
+
+    public void setStatustv(String statustv) {
+        this.statustv = statustv;
+    }
+
+    public String getTemplate() {
+        return template;
+    }
+
+    public void setTemplate(String template) {
+        this.template = template;
     }
 
     public String getImage() {

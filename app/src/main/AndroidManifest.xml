@@ -25,12 +25,13 @@
         android:theme="@style/Theme.CareerMatcherPro"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-
+        <activity
+            android:name=".payment.PackageBuyActivity"
+            android:exported="false" />
         <activity
             android:name=".notification.NoticeViewActivity"
             android:exported="false"
-            android:parentActivityName=".notification.NotificationActivity"
-            />
+            android:parentActivityName=".notification.NotificationActivity" />
         <activity
             android:name=".PrivacyActivity"
             android:exported="true"
