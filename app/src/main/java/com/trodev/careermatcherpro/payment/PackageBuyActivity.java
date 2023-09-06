@@ -19,7 +19,7 @@ import com.trodev.careermatcherpro.R;
 
 public class PackageBuyActivity extends AppCompatActivity {
 
-    TextInputEditText nameEt, emailEt, phoneEt, transactionEt ;
+    TextInputEditText nameEt, emailEt, phoneEt, transactionEt;
     private MaterialButton uploadBtn;
     private DatabaseReference databaseReference;
     AutoCompleteTextView autoCompleteTextView, payment;
@@ -35,7 +35,7 @@ public class PackageBuyActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Package Confirmation");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        String[] type = {"Basic Package 100৳", "Gold Package 300৳", "Platinum Package 600৳", "Master Package 1500৳"};
+        String[] type = {"Basic", "Gold", "Platinum", "Master"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this, R.layout.drop_down_list, type
         );
@@ -99,9 +99,9 @@ public class PackageBuyActivity extends AppCompatActivity {
             PaymentModel paymentModel = new PaymentModel(name, email, phone, payments, transaction, packages, status);
             databaseReference.child(userId).setValue(paymentModel);
 
-            Toast.makeText(this, "Payment details successful", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Payment details send successful", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "Payment details unsuccessful", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Payment details send unsuccessful", Toast.LENGTH_SHORT).show();
         }
     }
 

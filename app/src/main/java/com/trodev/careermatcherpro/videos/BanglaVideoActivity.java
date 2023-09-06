@@ -26,16 +26,11 @@ public class BanglaVideoActivity extends AppCompatActivity {
     private TubeAdapter adapter;
     private DatabaseReference reference, dbRef;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bangla_video);
         getSupportActionBar().setTitle("বাংলা কোর্স");
-
-
-
 
         /*init recyclerview*/
         recyclerView = findViewById(R.id.recyclerView);
