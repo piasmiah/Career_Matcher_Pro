@@ -28,6 +28,7 @@ public class EnglishVideoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_english_video);
+        getSupportActionBar().setTitle("ইংরেজী কোর্স");
 
         /*init recyclerview*/
         recyclerView = findViewById(R.id.recyclerView);

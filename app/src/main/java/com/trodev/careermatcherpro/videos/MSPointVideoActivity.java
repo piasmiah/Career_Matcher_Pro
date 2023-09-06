@@ -30,6 +30,7 @@ public class MSPointVideoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mspoint_video);
+        getSupportActionBar().setTitle("এমএস_পয়েন্ট কোর্স");
 
         /*init recyclerview*/
         recyclerView = findViewById(R.id.recyclerView);

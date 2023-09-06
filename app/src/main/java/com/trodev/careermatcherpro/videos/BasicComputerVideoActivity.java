@@ -29,6 +29,7 @@ public class BasicComputerVideoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basic_computer_video);
+        getSupportActionBar().setTitle("ব্যাসিক_কম্পিউটার কোর্স");
 
         /*init recyclerview*/
         recyclerView = findViewById(R.id.recyclerView);

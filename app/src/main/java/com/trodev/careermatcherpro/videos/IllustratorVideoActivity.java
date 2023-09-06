@@ -30,6 +30,7 @@ public class IllustratorVideoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_illustrator_video);
+        getSupportActionBar().setTitle("ইলাস্ট্রেটর কোর্স");
 
         /*init recyclerview*/
         recyclerView = findViewById(R.id.recyclerView);
@@ -75,5 +76,8 @@ public class IllustratorVideoActivity extends AppCompatActivity {
 
             }
         });
+
+
     }
+
 }
