@@ -2,7 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
     <item
         android:id="@+id/menu_cv"
         android:icon="@drawable/ic_cv"
@@ -42,6 +41,11 @@
         android:id="@+id/menu_rate"
         android:icon="@drawable/ic_rate"
         android:title="Rate Us" />
+
+    <item
+        android:id="@+id/menu_contact"
+        android:icon="@drawable/ic_gmail"
+        android:title="Contact us" />
 
     <item
         android:id="@+id/menu_apps"

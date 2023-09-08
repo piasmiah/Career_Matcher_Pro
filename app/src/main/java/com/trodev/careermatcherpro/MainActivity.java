@@ -214,7 +214,7 @@ public class MainActivity extends AppCompatActivity {
             String shareMessage = "\nCareer Matcher Pro App Download now\n\n";
             shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + getApplicationContext().getPackageName() + "\n\n";
             shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
-            startActivity(Intent.createChooser(shareIntent, "choose one"));
+            startActivity(Intent.createChooser(shareIntent, "Choose one to share our apps"));
 
         } else if (itemId == R.id.menu_rate) {
             try {
@@ -223,6 +223,13 @@ public class MainActivity extends AppCompatActivity {
             } catch (ActivityNotFoundException e) {
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + getPackageName())));
             }
+        } else if (itemId == R.id.menu_contact) {
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("plain/text");
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"careermatcherpro@gmail.com"});
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Help of");
+            intent.putExtra(Intent.EXTRA_TEXT, "Assalamualaikum, ");
+            startActivity(Intent.createChooser(intent, ""));
         }
 
         return super.onOptionsItemSelected(item);

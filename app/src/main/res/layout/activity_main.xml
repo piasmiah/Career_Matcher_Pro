@@ -44,6 +44,6 @@
         app:itemTextAppearance="@style/NavigationMenuViewStyle"
         app:menu="@menu/navigation_menu" />
 
-    <!--            app:indicatorRadius="5dp"-->
+    <!--app:indicatorRadius="5dp"-->
 
 </androidx.drawerlayout.widget.DrawerLayout>
