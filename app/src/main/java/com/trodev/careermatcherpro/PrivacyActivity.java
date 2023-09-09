@@ -3,6 +3,7 @@ package com.trodev.careermatcherpro;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.WindowManager;
 
 public class PrivacyActivity extends AppCompatActivity {
 
@@ -13,6 +14,9 @@ public class PrivacyActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle("Privacy Policy");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        /*prevent screen shot and screen recorder*/
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
 
     }
 }

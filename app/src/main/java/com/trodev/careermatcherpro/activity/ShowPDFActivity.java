@@ -3,6 +3,7 @@ package com.trodev.careermatcherpro.activity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.WindowManager;
 import android.webkit.WebView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +27,9 @@ public class ShowPDFActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_pdfactivity);
+
+        /*disable ss permission*/
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
 
         /*action bar title*/
         getSupportActionBar().setTitle("পিডিএফ দেখুন");

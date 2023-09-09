@@ -19,6 +19,7 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -45,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
     private ActionBarDrawerToggle toggle;
     private NavigationView navigationView;
     private long pressedTime;
-
     /*one-signal key*/
     private static final String ONESIGNAL_APP_ID = "cf90a2a6-f358-459b-9100-883fa298f57f";
 
@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         /*init all drawer layout*/
         drawerLayout = findViewById(R.id.drawer_Layout);

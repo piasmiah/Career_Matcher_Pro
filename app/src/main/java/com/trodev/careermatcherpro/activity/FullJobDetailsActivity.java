@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -36,6 +37,9 @@ public class FullJobDetailsActivity extends AppCompatActivity {
         /*action bar title*/
         getSupportActionBar().setTitle("বিস্তারিত দেখুন");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        /*prevent screen shot and screen recorder*/
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
 
         // pdfView = findViewById(R.id.pdfView);
         showPdfLl = findViewById(R.id.showPdfLl);

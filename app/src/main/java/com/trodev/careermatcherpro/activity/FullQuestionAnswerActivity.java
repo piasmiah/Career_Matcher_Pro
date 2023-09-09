@@ -3,6 +3,7 @@ package com.trodev.careermatcherpro.activity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.WindowManager;
 import android.webkit.WebView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,6 +32,9 @@ public class FullQuestionAnswerActivity extends AppCompatActivity {
         /*action bar title*/
         getSupportActionBar().setTitle("পিডিএফ দেখুন");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        /*prevent screen shot and screen recorder*/
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
 
         pdfView = findViewById(R.id.pdfView);
 
