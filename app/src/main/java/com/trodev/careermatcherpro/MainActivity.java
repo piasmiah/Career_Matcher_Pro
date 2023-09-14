@@ -232,6 +232,8 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra(Intent.EXTRA_SUBJECT, "Help of");
             intent.putExtra(Intent.EXTRA_TEXT, "Assalamualaikum, ");
             startActivity(Intent.createChooser(intent, ""));
+        } else if (itemId == R.id.menu_mcq) {
+            startActivity(new Intent(MainActivity.this, BanglaMCQActivity.class));
         }
 
         return super.onOptionsItemSelected(item);

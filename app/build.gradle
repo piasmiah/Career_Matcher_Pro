@@ -44,12 +44,7 @@ dependencies {
     def multidex_version = "2.0.1"
     implementation "androidx.multidex:multidex:$multidex_version"
 
-    /*exoplayer*/
-    implementation 'com.google.android.exoplayer:exoplayer-core:2.15.0'
-    implementation 'com.google.android.exoplayer:exoplayer-ui:2.15.0'
-
-
-
+    
     /*youtube*/
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0'
 
@@ -59,6 +54,9 @@ dependencies {
     /*additional dependency*/
     /*smooth bottom bar*/
     implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.9'
+
+    /*async task*/
+    implementation 'com.loopj.android:android-async-http:1.4.11'
 
     /*pdf viewer dependency*/
     implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'

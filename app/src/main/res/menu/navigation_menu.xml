@@ -28,6 +28,11 @@
         android:title="Premium package" />
 
     <item
+        android:id="@+id/menu_mcq"
+        android:icon="@drawable/ic_mcq"
+        android:title="MCQ" />
+
+    <item
         android:id="@+id/menu_privacy"
         android:icon="@drawable/ic_privacy"
         android:title="Privacy Policy" />
