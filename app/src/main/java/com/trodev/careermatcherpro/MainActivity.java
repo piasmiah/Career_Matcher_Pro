@@ -19,7 +19,6 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -233,7 +232,7 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra(Intent.EXTRA_TEXT, "Assalamualaikum, ");
             startActivity(Intent.createChooser(intent, ""));
         } else if (itemId == R.id.menu_mcq) {
-            startActivity(new Intent(MainActivity.this, BanglaMCQActivity.class));
+            startActivity(new Intent(MainActivity.this, McqMainActivity.class));
         }
 
         return super.onOptionsItemSelected(item);

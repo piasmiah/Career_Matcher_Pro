@@ -1,13 +1,20 @@
-package com.trodev.careermatcherpro;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+package com.trodev.careermatcherpro.mcq_part.bangla;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ProgressBar;
+
+import com.trodev.careermatcherpro.R;
+import com.trodev.careermatcherpro.mcq_part.McqAdapter;
+import com.trodev.careermatcherpro.mcq_part.McqModel;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -19,31 +26,38 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BanglaMCQActivity extends AppCompatActivity {
+
+public class Bangla_twoFragment extends Fragment {
 
     private static final String json_url = "https://zobayer-dev-e12aa.web.app/bangla_mcq.json";
     RecyclerView recyclerView;
     List<McqModel> list;
     ProgressBar progressBar;
 
+    public Bangla_twoFragment() {
+        // Required empty public constructor
+    }
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bangla_mcqactivity);
-
-
-        // set title in activity
-        getSupportActionBar().setTitle("বাংলা ভাষা ও সাহিত্য");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_bangla_two, container, false);
         /*init views*/
-        recyclerView = findViewById(R.id.dataRv);
-        progressBar = findViewById(R.id.progressBar);
+        recyclerView = view.findViewById(R.id.dataRv);
+        progressBar = view.findViewById(R.id.progress_bar);
 
         progressBar.setVisibility(View.VISIBLE);
         list = new ArrayList<>();
 
-        GetData getData = new GetData();
+        loadData();
+
+        return view;
+    }
+
+    private void loadData() {
+
+        GetData getData = new  GetData();
         getData.execute();
 
     }
@@ -95,7 +109,7 @@ public class BanglaMCQActivity extends AppCompatActivity {
                 JSONObject jsonObject = new JSONObject(s);
 
                 // database info
-                JSONArray jsonArray = jsonObject.getJSONArray("bangla_first");
+                JSONArray jsonArray = jsonObject.getJSONArray("bangla_second");
 
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject jsonObject1 = jsonArray.getJSONObject(i);
@@ -134,9 +148,10 @@ public class BanglaMCQActivity extends AppCompatActivity {
     private void PutDataIntoRecyclerview(List<McqModel> list) {
 
         progressBar.setVisibility(View.INVISIBLE);
-        McqAdapter customAdapter = new McqAdapter(getApplicationContext(), list);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        McqAdapter customAdapter = new McqAdapter(getContext(), list);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(customAdapter);
 
     }
+
 }

@@ -1,4 +1,4 @@
-package com.trodev.careermatcherpro;
+package com.trodev.careermatcherpro.mcq_part;
 
 public class McqModel {
 
