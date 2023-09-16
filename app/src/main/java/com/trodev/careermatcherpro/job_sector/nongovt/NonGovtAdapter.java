@@ -1,4 +1,4 @@
-package com.trodev.careermatcherpro.ngo;
+package com.trodev.careermatcherpro.job_sector.nongovt;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,18 +13,18 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import com.trodev.careermatcherpro.R;
 import com.trodev.careermatcherpro.activity.ViewAllJobActivity;
 
 import java.util.ArrayList;
 
-public class NGOAdapter extends RecyclerView.Adapter<NGOAdapter.MyViewHolder> {
+public class NonGovtAdapter extends RecyclerView.Adapter<NonGovtAdapter.MyViewHolder> {
 
-    ArrayList<NGOModel> list;
+
+    ArrayList<NonGovtModel> list;
     Context context;
 
-    public NGOAdapter(ArrayList<NGOModel> list, Context context) {
+    public NonGovtAdapter(ArrayList<NonGovtModel> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -34,14 +34,14 @@ public class NGOAdapter extends RecyclerView.Adapter<NGOAdapter.MyViewHolder> {
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(context).inflate(R.layout.job_list_item, parent, false);
-        return new MyViewHolder(view);
 
+        return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        NGOModel model = list.get(position);
+        NonGovtModel model = list.get(position);
 
         // Image get on firebase database.....
         // Picasso.get().load(model.getImage()).placeholder(R.drawable.app_logos).into(holder.imageIv);
@@ -86,6 +86,7 @@ public class NGOAdapter extends RecyclerView.Adapter<NGOAdapter.MyViewHolder> {
 
         private TextView detailsTv, sourceTv, endDateTv;
         private CardView cardView;
+
         private ImageView imageIv;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -96,6 +97,7 @@ public class NGOAdapter extends RecyclerView.Adapter<NGOAdapter.MyViewHolder> {
             endDateTv = itemView.findViewById(R.id.endDateTv);
             imageIv = itemView.findViewById(R.id.imageIv);
             cardView = itemView.findViewById(R.id.cardView);
+
 
         }
     }

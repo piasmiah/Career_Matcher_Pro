@@ -1,4 +1,4 @@
-package com.trodev.careermatcherpro.bank;
+package com.trodev.careermatcherpro.job_sector.nongovt;
 
 import android.os.Bundle;
 import android.view.View;
@@ -18,45 +18,44 @@ import com.trodev.careermatcherpro.R;
 
 import java.util.ArrayList;
 
-public class BankJobActivity extends AppCompatActivity {
+public class NonGovtJobActivity extends AppCompatActivity {
 
-   /* private FloatingActionButton add_bank_job_btn;*/
     RecyclerView recyclerView;
     ProgressBar progressBar;
-    ArrayList<BankModel> model;
-    BankAdapter adapter;
+    ArrayList<NonGovtModel> model;
+    NonGovtAdapter adapter;
     FirebaseDatabase database;
     DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bank_job);
+        setContentView(R.layout.activity_non_govt_job);
 
         /*init action bar*/
-        getSupportActionBar().setTitle("সকল ব্যাংক চাকরি");
+        getSupportActionBar().setTitle("বেসরকারি চাকরি");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-/*
-        add_bank_job_btn = findViewById(R.id.add_bank_job_btn);
-*/
+
+        /*recyclerview and progress bar*/
         recyclerView = findViewById(R.id.recyclerView);
         progressBar = findViewById(R.id.progressBar);
-
         progressBar.setVisibility(View.VISIBLE);
 
+        /*model get */
         model = new ArrayList<>();
 
-        // database = FirebaseDatabase.getInstance();
-
-        reference = FirebaseDatabase.getInstance().getReference().child("bank_job");
-
-        adapter = new BankAdapter(model, getApplicationContext());
+        /*adapter and model*/
+        adapter = new NonGovtAdapter(model, getApplicationContext());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setAdapter(adapter);
 
+        /*database child and get data from database*/
+        reference = FirebaseDatabase.getInstance().getReference().child("non_govt_job");
+
+        /*data view on firebase database get data from on reference*/
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -65,9 +64,8 @@ public class BankJobActivity extends AppCompatActivity {
 
                     progressBar.setVisibility(View.GONE);
 
-                    BankModel govtModel = dataSnapshot.getValue(BankModel.class);
+                    NonGovtModel govtModel = dataSnapshot.getValue(NonGovtModel.class);
                     model.add(0, govtModel);
-
                 }
 
                 adapter.notifyDataSetChanged();
@@ -80,15 +78,9 @@ public class BankJobActivity extends AppCompatActivity {
             }
         });
 
+
         /*database synced*/
         reference.keepSynced(true);
 
-    /*    add_bank_job_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(BankJobActivity.this, UploadBankJobActivity.class));
-            }
-        });
-*/
     }
 }

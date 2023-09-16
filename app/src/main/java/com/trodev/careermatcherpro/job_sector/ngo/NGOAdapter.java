@@ -1,4 +1,4 @@
-package com.trodev.careermatcherpro.bank;
+package com.trodev.careermatcherpro.job_sector.ngo;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,12 +19,12 @@ import com.trodev.careermatcherpro.activity.ViewAllJobActivity;
 
 import java.util.ArrayList;
 
-public class BankAdapter extends RecyclerView.Adapter<BankAdapter.MyViewHolder> {
+public class NGOAdapter extends RecyclerView.Adapter<NGOAdapter.MyViewHolder> {
 
-    ArrayList<BankModel> list;
+    ArrayList<NGOModel> list;
     Context context;
 
-    public BankAdapter(ArrayList<BankModel> list, Context context) {
+    public NGOAdapter(ArrayList<NGOModel> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -32,15 +32,16 @@ public class BankAdapter extends RecyclerView.Adapter<BankAdapter.MyViewHolder> 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.job_list_item, parent, false);
 
+        View view = LayoutInflater.from(context).inflate(R.layout.job_list_item, parent, false);
         return new MyViewHolder(view);
+
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        BankModel model = list.get(position);
+        NGOModel model = list.get(position);
 
         // Image get on firebase database.....
         // Picasso.get().load(model.getImage()).placeholder(R.drawable.app_logos).into(holder.imageIv);
@@ -71,7 +72,6 @@ public class BankAdapter extends RecyclerView.Adapter<BankAdapter.MyViewHolder> 
 
             }
         });
-
         /*animation view with slider*/
         holder.cardView.startAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(), R.anim.slider));
 

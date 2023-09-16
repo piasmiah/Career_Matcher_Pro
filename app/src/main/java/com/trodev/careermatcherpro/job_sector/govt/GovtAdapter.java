@@ -1,10 +1,11 @@
-package com.trodev.careermatcherpro.alljob;
+package com.trodev.careermatcherpro.job_sector.govt;
 
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,18 +13,17 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-
-import com.trodev.careermatcherpro.activity.FullJobDetailsActivity;
 import com.trodev.careermatcherpro.R;
+import com.trodev.careermatcherpro.activity.ViewAllJobActivity;
 
 import java.util.ArrayList;
 
+public class GovtAdapter extends RecyclerView.Adapter<GovtAdapter.MyViewHolder> {
 
-public class AllJobAdapter extends RecyclerView.Adapter<AllJobAdapter.MyViewHolder>{
-    ArrayList<AllJobModel> list;
+    ArrayList<GovtModel> list;
     Context context;
 
-    public AllJobAdapter(ArrayList<AllJobModel> list, Context context) {
+    public GovtAdapter(ArrayList<GovtModel> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -31,6 +31,7 @@ public class AllJobAdapter extends RecyclerView.Adapter<AllJobAdapter.MyViewHold
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
         View view = LayoutInflater.from(context).inflate(R.layout.job_list_item, parent, false);
 
         return new MyViewHolder(view);
@@ -38,10 +39,11 @@ public class AllJobAdapter extends RecyclerView.Adapter<AllJobAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        AllJobModel model = list.get(position);
+
+        GovtModel model = list.get(position);
 
         // Image get on firebase database.....
-        // Picasso.get().load(model.getImage()).placeholder(R.drawable.app_logos).into(holder.imageIv);
+       // Picasso.get().load(model.getImage()).placeholder(R.drawable.app_logos).into(holder.imageIv);
 
         holder.detailsTv.setText(model.getPostdetails());
         holder.sourceTv.setText(model.getSource());
@@ -52,7 +54,7 @@ public class AllJobAdapter extends RecyclerView.Adapter<AllJobAdapter.MyViewHold
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(context, FullJobDetailsActivity.class);
+                Intent intent = new Intent(context, ViewAllJobActivity.class);
 
                 intent.putExtra("details", model.getPostdetails());
                 intent.putExtra("post", model.getPostname());
@@ -70,6 +72,9 @@ public class AllJobAdapter extends RecyclerView.Adapter<AllJobAdapter.MyViewHold
             }
         });
 
+        /*animation view with slider*/
+        holder.cardView.startAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(), R.anim.slider));
+
     }
 
     @Override
@@ -77,16 +82,22 @@ public class AllJobAdapter extends RecyclerView.Adapter<AllJobAdapter.MyViewHold
         return list.size();
     }
 
-    public class MyViewHolder extends RecyclerView. ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+
         private TextView detailsTv, sourceTv, endDateTv;
         private CardView cardView;
         private ImageView imageIv;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
+
             detailsTv = itemView.findViewById(R.id.detailsTv);
             sourceTv = itemView.findViewById(R.id.sourceTv);
             endDateTv = itemView.findViewById(R.id.endDateTv);
             imageIv = itemView.findViewById(R.id.imageIv);
+            cardView = itemView.findViewById(R.id.cardView);
+
+
         }
     }
 }

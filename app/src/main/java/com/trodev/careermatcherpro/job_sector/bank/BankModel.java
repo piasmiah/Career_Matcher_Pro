@@ -1,12 +1,12 @@
-package com.trodev.careermatcherpro.alljob;
+package com.trodev.careermatcherpro.job_sector.bank;
 
-public class AllJobModel {
+public class BankModel {
+
     private String postname, postdetails, startdate, enddate, source,  link , image, pdfUrl;
 
-    public AllJobModel() {
+    public BankModel() {
     }
-
-    public AllJobModel(String postname, String postdetails, String startdate, String enddate, String source, String link, String image, String pdfUrl) {
+    public BankModel(String postname, String postdetails, String startdate, String enddate, String source, String link, String image, String pdfUrl) {
         this.postname = postname;
         this.postdetails = postdetails;
         this.startdate = startdate;

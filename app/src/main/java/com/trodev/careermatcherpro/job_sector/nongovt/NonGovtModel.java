@@ -1,4 +1,4 @@
-package com.trodev.careermatcherpro.nongovt;
+package com.trodev.careermatcherpro.job_sector.nongovt;
 
 public class NonGovtModel {
 

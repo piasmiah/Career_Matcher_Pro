@@ -1,12 +1,14 @@
-package com.trodev.careermatcherpro.bank;
+package com.trodev.careermatcherpro.job_sector.ngo;
 
-public class BankModel {
+public class NGOModel {
 
+    /*make string type data*/
     private String postname, postdetails, startdate, enddate, source,  link , image, pdfUrl;
 
-    public BankModel() {
+    public NGOModel() {
     }
-    public BankModel(String postname, String postdetails, String startdate, String enddate, String source, String link, String image, String pdfUrl) {
+
+    public NGOModel(String postname, String postdetails, String startdate, String enddate, String source, String link, String image, String pdfUrl) {
         this.postname = postname;
         this.postdetails = postdetails;
         this.startdate = startdate;

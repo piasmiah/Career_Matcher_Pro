@@ -1,4 +1,4 @@
-package com.trodev.careermatcherpro.govt;
+package com.trodev.careermatcherpro.job_sector.teacher;
 
 import android.content.Context;
 import android.content.Intent;
@@ -18,12 +18,12 @@ import com.trodev.careermatcherpro.activity.ViewAllJobActivity;
 
 import java.util.ArrayList;
 
-public class GovtAdapter extends RecyclerView.Adapter<GovtAdapter.MyViewHolder> {
+public class TeacherAdapter extends RecyclerView.Adapter<TeacherAdapter.MyViewHolder> {
 
-    ArrayList<GovtModel> list;
+    ArrayList<TeacherModel> list;
     Context context;
 
-    public GovtAdapter(ArrayList<GovtModel> list, Context context) {
+    public TeacherAdapter(ArrayList<TeacherModel> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -33,17 +33,17 @@ public class GovtAdapter extends RecyclerView.Adapter<GovtAdapter.MyViewHolder> 
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(context).inflate(R.layout.job_list_item, parent, false);
-
         return new MyViewHolder(view);
+
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        GovtModel model = list.get(position);
+        TeacherModel model = list.get(position);
 
         // Image get on firebase database.....
-       // Picasso.get().load(model.getImage()).placeholder(R.drawable.app_logos).into(holder.imageIv);
+        // Picasso.get().load(model.getImage()).placeholder(R.drawable.app_logos).into(holder.imageIv);
 
         holder.detailsTv.setText(model.getPostdetails());
         holder.sourceTv.setText(model.getSource());
@@ -96,7 +96,6 @@ public class GovtAdapter extends RecyclerView.Adapter<GovtAdapter.MyViewHolder> 
             endDateTv = itemView.findViewById(R.id.endDateTv);
             imageIv = itemView.findViewById(R.id.imageIv);
             cardView = itemView.findViewById(R.id.cardView);
-
 
         }
     }

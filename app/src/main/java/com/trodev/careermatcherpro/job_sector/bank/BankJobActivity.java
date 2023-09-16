@@ -1,4 +1,4 @@
-package com.trodev.careermatcherpro.ngo;
+package com.trodev.careermatcherpro.job_sector.bank;
 
 import android.os.Bundle;
 import android.view.View;
@@ -18,27 +18,28 @@ import com.trodev.careermatcherpro.R;
 
 import java.util.ArrayList;
 
-public class NGOJobActivity extends AppCompatActivity {
+public class BankJobActivity extends AppCompatActivity {
 
-    /*private FloatingActionButton add_ngo_job_btn;*/
+   /* private FloatingActionButton add_bank_job_btn;*/
     RecyclerView recyclerView;
     ProgressBar progressBar;
-
-    ArrayList<NGOModel> model;
-    NGOAdapter adapter;
+    ArrayList<BankModel> model;
+    BankAdapter adapter;
     FirebaseDatabase database;
     DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ngojob);
+        setContentView(R.layout.activity_bank_job);
 
         /*init action bar*/
-        getSupportActionBar().setTitle("সকল এনজিও চাকরি");
+        getSupportActionBar().setTitle("সকল ব্যাংক চাকরি");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        /*add_ngo_job_btn = findViewById(R.id.add_ngo_job_btn);*/
+/*
+        add_bank_job_btn = findViewById(R.id.add_bank_job_btn);
+*/
         recyclerView = findViewById(R.id.recyclerView);
         progressBar = findViewById(R.id.progressBar);
 
@@ -48,9 +49,9 @@ public class NGOJobActivity extends AppCompatActivity {
 
         // database = FirebaseDatabase.getInstance();
 
-        reference = FirebaseDatabase.getInstance().getReference().child("ngo_job");
+        reference = FirebaseDatabase.getInstance().getReference().child("bank_job");
 
-        adapter = new NGOAdapter(model, getApplicationContext());
+        adapter = new BankAdapter(model, getApplicationContext());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setNestedScrollingEnabled(false);
@@ -64,8 +65,8 @@ public class NGOJobActivity extends AppCompatActivity {
 
                     progressBar.setVisibility(View.GONE);
 
-                    NGOModel ngoModel = dataSnapshot.getValue(NGOModel.class);
-                    model.add(0, ngoModel);
+                    BankModel govtModel = dataSnapshot.getValue(BankModel.class);
+                    model.add(0, govtModel);
 
                 }
 
@@ -82,11 +83,12 @@ public class NGOJobActivity extends AppCompatActivity {
         /*database synced*/
         reference.keepSynced(true);
 
-     /*   add_ngo_job_btn.setOnClickListener(new View.OnClickListener() {
+    /*    add_bank_job_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(NGOJobActivity.this, UploadNGOJobActivity.class));
+                startActivity(new Intent(BankJobActivity.this, UploadBankJobActivity.class));
             }
-        });*/
+        });
+*/
     }
 }

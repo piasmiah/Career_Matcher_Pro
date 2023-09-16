@@ -1,14 +1,13 @@
-package com.trodev.careermatcherpro.ngo;
+package com.trodev.careermatcherpro.job_sector.govt;
 
-public class NGOModel {
+public class GovtModel {
 
-    /*make string type data*/
-    private String postname, postdetails, startdate, enddate, source,  link , image, pdfUrl;
+    private String postname, postdetails, startdate, enddate, source, link, image, pdfUrl;
 
-    public NGOModel() {
+    public GovtModel() {
     }
 
-    public NGOModel(String postname, String postdetails, String startdate, String enddate, String source, String link, String image, String pdfUrl) {
+    public GovtModel(String postname, String postdetails, String startdate, String enddate, String source, String link, String image, String pdfUrl) {
         this.postname = postname;
         this.postdetails = postdetails;
         this.startdate = startdate;

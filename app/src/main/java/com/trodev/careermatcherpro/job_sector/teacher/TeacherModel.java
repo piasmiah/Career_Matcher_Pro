@@ -1,13 +1,13 @@
-package com.trodev.careermatcherpro.govt;
+package com.trodev.careermatcherpro.job_sector.teacher;
 
-public class GovtModel {
+public class TeacherModel {
 
-    private String postname, postdetails, startdate, enddate, source, link, image, pdfUrl;
+    private String postname, postdetails, startdate, enddate, source,  link , image, pdfUrl;
 
-    public GovtModel() {
+    public TeacherModel() {
     }
 
-    public GovtModel(String postname, String postdetails, String startdate, String enddate, String source, String link, String image, String pdfUrl) {
+    public TeacherModel(String postname, String postdetails, String startdate, String enddate, String source, String link, String image, String pdfUrl) {
         this.postname = postname;
         this.postdetails = postdetails;
         this.startdate = startdate;

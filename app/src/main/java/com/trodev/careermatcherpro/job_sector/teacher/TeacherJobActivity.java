@@ -1,6 +1,5 @@
-package com.trodev.careermatcherpro.alljob;
+package com.trodev.careermatcherpro.job_sector.teacher;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -20,41 +19,46 @@ import com.trodev.careermatcherpro.R;
 
 import java.util.ArrayList;
 
-public class AllJobActivity extends AppCompatActivity {
-    /*private FloatingActionButton add_all_job_btn;*/
+public class TeacherJobActivity extends AppCompatActivity {
+
+    private FloatingActionButton add_teacher_job_btn;
     RecyclerView recyclerView;
     ProgressBar progressBar;
-    ArrayList<AllJobModel> model;
-    AllJobAdapter adapter;
+    ArrayList<TeacherModel> model;
+    TeacherAdapter adapter;
     FirebaseDatabase database;
     DatabaseReference reference;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_all_job);
+        setContentView(R.layout.activity_teacher_job);
+
         /*init action bar*/
-        getSupportActionBar().setTitle("সকল চাকরি");
+        getSupportActionBar().setTitle("শিক্ষক নিয়োগ চাকরি");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-/*
-        add_all_job_btn = findViewById(R.id.add_all_job_btn);
-*/
+        /*init views all*/
+
         recyclerView = findViewById(R.id.recyclerView);
         progressBar = findViewById(R.id.progressBar);
-
         progressBar.setVisibility(View.VISIBLE);
 
+        /*set data on recyclerview*/
         model = new ArrayList<>();
 
-        // database = FirebaseDatabase.getInstance();
+        /*past code*/
+        //database = FirebaseDatabase.getInstance();
 
-        reference = FirebaseDatabase.getInstance().getReference().child("all_job");
-
-        adapter = new AllJobAdapter(model, getApplicationContext());
+        adapter = new TeacherAdapter(model, getApplicationContext());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setAdapter(adapter);
+
+        /*database child and get data from database*/
+        reference = FirebaseDatabase.getInstance().getReference().child("teacher_job");
 
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -64,9 +68,8 @@ public class AllJobActivity extends AppCompatActivity {
 
                     progressBar.setVisibility(View.GONE);
 
-                    AllJobModel allJobModel = dataSnapshot.getValue(AllJobModel.class);
-                    model.add(0, allJobModel);
-
+                    TeacherModel govtModel = dataSnapshot.getValue(TeacherModel.class);
+                    model.add(0, govtModel);
                 }
 
                 adapter.notifyDataSetChanged();
@@ -81,13 +84,6 @@ public class AllJobActivity extends AppCompatActivity {
 
         /*database synced*/
         reference.keepSynced(true);
-
-       /* add_all_job_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(AllJobActivity.this, UploadAllJobActivity.class));
-            }
-        });*/
 
     }
 }

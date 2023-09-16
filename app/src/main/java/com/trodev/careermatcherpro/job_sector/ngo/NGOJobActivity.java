@@ -1,4 +1,4 @@
-package com.trodev.careermatcherpro.teacher;
+package com.trodev.careermatcherpro.job_sector.ngo;
 
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -19,46 +18,43 @@ import com.trodev.careermatcherpro.R;
 
 import java.util.ArrayList;
 
-public class TeacherJobActivity extends AppCompatActivity {
+public class NGOJobActivity extends AppCompatActivity {
 
-    private FloatingActionButton add_teacher_job_btn;
+    /*private FloatingActionButton add_ngo_job_btn;*/
     RecyclerView recyclerView;
     ProgressBar progressBar;
-    ArrayList<TeacherModel> model;
-    TeacherAdapter adapter;
+
+    ArrayList<NGOModel> model;
+    NGOAdapter adapter;
     FirebaseDatabase database;
     DatabaseReference reference;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teacher_job);
+        setContentView(R.layout.activity_ngojob);
 
         /*init action bar*/
-        getSupportActionBar().setTitle("শিক্ষক নিয়োগ চাকরি");
+        getSupportActionBar().setTitle("সকল এনজিও চাকরি");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        /*init views all*/
-
+        /*add_ngo_job_btn = findViewById(R.id.add_ngo_job_btn);*/
         recyclerView = findViewById(R.id.recyclerView);
         progressBar = findViewById(R.id.progressBar);
+
         progressBar.setVisibility(View.VISIBLE);
 
-        /*set data on recyclerview*/
         model = new ArrayList<>();
 
-        /*past code*/
-        //database = FirebaseDatabase.getInstance();
+        // database = FirebaseDatabase.getInstance();
 
-        adapter = new TeacherAdapter(model, getApplicationContext());
+        reference = FirebaseDatabase.getInstance().getReference().child("ngo_job");
+
+        adapter = new NGOAdapter(model, getApplicationContext());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setAdapter(adapter);
-
-        /*database child and get data from database*/
-        reference = FirebaseDatabase.getInstance().getReference().child("teacher_job");
 
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -68,8 +64,9 @@ public class TeacherJobActivity extends AppCompatActivity {
 
                     progressBar.setVisibility(View.GONE);
 
-                    TeacherModel govtModel = dataSnapshot.getValue(TeacherModel.class);
-                    model.add(0, govtModel);
+                    NGOModel ngoModel = dataSnapshot.getValue(NGOModel.class);
+                    model.add(0, ngoModel);
+
                 }
 
                 adapter.notifyDataSetChanged();
@@ -85,5 +82,11 @@ public class TeacherJobActivity extends AppCompatActivity {
         /*database synced*/
         reference.keepSynced(true);
 
+     /*   add_ngo_job_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NGOJobActivity.this, UploadNGOJobActivity.class));
+            }
+        });*/
     }
 }

@@ -1,13 +1,13 @@
-package com.trodev.careermatcherpro.govt;
+package com.trodev.careermatcherpro.job_sector.alljob;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ProgressBar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -18,24 +18,25 @@ import com.trodev.careermatcherpro.R;
 
 import java.util.ArrayList;
 
-public class GovtActivity extends AppCompatActivity {
-
+public class AllJobActivity extends AppCompatActivity {
+    /*private FloatingActionButton add_all_job_btn;*/
     RecyclerView recyclerView;
     ProgressBar progressBar;
-    ArrayList<GovtModel> model;
-    GovtAdapter adapter;
+    ArrayList<AllJobModel> model;
+    AllJobAdapter adapter;
     FirebaseDatabase database;
     DatabaseReference reference;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_govt);
-
+        setContentView(R.layout.activity_all_job);
         /*init action bar*/
-        getSupportActionBar().setTitle("সকল সরকারি চাকরি");
+        getSupportActionBar().setTitle("সকল চাকরি");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+/*
+        add_all_job_btn = findViewById(R.id.add_all_job_btn);
+*/
         recyclerView = findViewById(R.id.recyclerView);
         progressBar = findViewById(R.id.progressBar);
 
@@ -45,9 +46,9 @@ public class GovtActivity extends AppCompatActivity {
 
         // database = FirebaseDatabase.getInstance();
 
-        reference = FirebaseDatabase.getInstance().getReference().child("govt_job");
+        reference = FirebaseDatabase.getInstance().getReference().child("all_job");
 
-        adapter = new GovtAdapter(model, getApplicationContext());
+        adapter = new AllJobAdapter(model, getApplicationContext());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setNestedScrollingEnabled(false);
@@ -61,8 +62,8 @@ public class GovtActivity extends AppCompatActivity {
 
                     progressBar.setVisibility(View.GONE);
 
-                    GovtModel govtModel = dataSnapshot.getValue(GovtModel.class);
-                    model.add(0, govtModel);
+                    AllJobModel allJobModel = dataSnapshot.getValue(AllJobModel.class);
+                    model.add(0, allJobModel);
 
                 }
 
@@ -78,6 +79,13 @@ public class GovtActivity extends AppCompatActivity {
 
         /*database synced*/
         reference.keepSynced(true);
+
+       /* add_all_job_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AllJobActivity.this, UploadAllJobActivity.class));
+            }
+        });*/
 
     }
 }

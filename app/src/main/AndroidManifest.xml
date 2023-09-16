@@ -130,9 +130,9 @@
         <activity
             android:name=".activity.FullJobDetailsActivity"
             android:exported="false"
-            android:parentActivityName=".alljob.AllJobActivity" />
+            android:parentActivityName=".job_sector.alljob.AllJobActivity" />
         <activity
-            android:name=".alljob.AllJobActivity"
+            android:name=".job_sector.alljob.AllJobActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
@@ -148,19 +148,19 @@
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".bank.BankJobActivity"
+            android:name=".job_sector.bank.BankJobActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".ngo.NGOJobActivity"
+            android:name=".job_sector.ngo.NGOJobActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".teacher.TeacherJobActivity"
+            android:name=".job_sector.teacher.TeacherJobActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".nongovt.NonGovtJobActivity"
+            android:name=".job_sector.nongovt.NonGovtJobActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
@@ -168,7 +168,7 @@
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".govt.GovtActivity"
+            android:name=".job_sector.govt.GovtActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity

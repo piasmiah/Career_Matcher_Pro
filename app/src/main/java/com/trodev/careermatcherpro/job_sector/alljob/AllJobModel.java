@@ -1,13 +1,12 @@
-package com.trodev.careermatcherpro.teacher;
+package com.trodev.careermatcherpro.job_sector.alljob;
 
-public class TeacherModel {
-
+public class AllJobModel {
     private String postname, postdetails, startdate, enddate, source,  link , image, pdfUrl;
 
-    public TeacherModel() {
+    public AllJobModel() {
     }
 
-    public TeacherModel(String postname, String postdetails, String startdate, String enddate, String source, String link, String image, String pdfUrl) {
+    public AllJobModel(String postname, String postdetails, String startdate, String enddate, String source, String link, String image, String pdfUrl) {
         this.postname = postname;
         this.postdetails = postdetails;
         this.startdate = startdate;

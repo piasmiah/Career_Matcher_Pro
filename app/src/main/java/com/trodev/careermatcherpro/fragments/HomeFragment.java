@@ -21,14 +21,14 @@ import com.google.firebase.database.ValueEventListener;
 import com.trodev.careermatcherpro.R;
 import com.trodev.careermatcherpro.advice.AdviceAdapter;
 import com.trodev.careermatcherpro.advice.AdviceModel;
-import com.trodev.careermatcherpro.alljob.AllJobActivity;
-import com.trodev.careermatcherpro.bank.BankJobActivity;
+import com.trodev.careermatcherpro.job_sector.alljob.AllJobActivity;
+import com.trodev.careermatcherpro.job_sector.bank.BankJobActivity;
 import com.trodev.careermatcherpro.bank_que.BankQuestionAnswerActivity;
 import com.trodev.careermatcherpro.bcs.BCSQuestionAnswerActivity;
-import com.trodev.careermatcherpro.govt.GovtActivity;
-import com.trodev.careermatcherpro.ngo.NGOJobActivity;
-import com.trodev.careermatcherpro.nongovt.NonGovtJobActivity;
-import com.trodev.careermatcherpro.teacher.TeacherJobActivity;
+import com.trodev.careermatcherpro.job_sector.govt.GovtActivity;
+import com.trodev.careermatcherpro.job_sector.ngo.NGOJobActivity;
+import com.trodev.careermatcherpro.job_sector.nongovt.NonGovtJobActivity;
+import com.trodev.careermatcherpro.job_sector.teacher.TeacherJobActivity;
 
 import java.util.ArrayList;
 
