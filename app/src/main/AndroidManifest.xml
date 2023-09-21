@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -24,13 +24,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CareerMatcherPro"
         android:usesCleartextTraffic="true"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+        <activity
+            android:name=".mcq_part.english.EnglishMCQActivity"
+            android:exported="false"
+            android:parentActivityName=".McqMainActivity"
+            />
         <activity
             android:name=".McqMainActivity"
             android:exported="false" />
         <activity
             android:name=".mcq_part.bangla.BanglaMCQActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".McqMainActivity"/>
         <activity
             android:name=".payment.PackageBuyActivity"
             android:exported="false" />
@@ -193,7 +199,7 @@
         <activity
             android:name=".activity.SplashActivity"
             android:exported="true"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

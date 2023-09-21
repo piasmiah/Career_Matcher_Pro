@@ -1,4 +1,4 @@
-package com.trodev.careermatcherpro.mcq_part.bangla;
+package com.trodev.careermatcherpro.mcq_part.english;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -13,6 +13,9 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
 import com.trodev.careermatcherpro.R;
+import com.trodev.careermatcherpro.mcq_part.bangla.Bangla_oneFragment;
+import com.trodev.careermatcherpro.mcq_part.bangla.McqAdapter;
+import com.trodev.careermatcherpro.mcq_part.bangla.McqModel;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -25,22 +28,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Bangla_twoFragment extends Fragment {
+public class English_oneFragment extends Fragment {
 
-    private static final String json_url = "https://zobayer-dev-e12aa.web.app/bangla_mcq.json";
+    private static final String json_url = "https://zobayer-dev-e12aa.web.app/english_mcq.json";
     RecyclerView recyclerView;
-    List<McqModel> list;
+    List<EnglishModel> list;
     ProgressBar progressBar;
 
-    public Bangla_twoFragment() {
+    public English_oneFragment() {
         // Required empty public constructor
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_bangla_two, container, false);
+        View view = inflater.inflate(R.layout.fragment_english_one, container, false);
+
         /*init views*/
         recyclerView = view.findViewById(R.id.dataRv);
         progressBar = view.findViewById(R.id.progress_bar);
@@ -55,7 +58,8 @@ public class Bangla_twoFragment extends Fragment {
 
     private void loadData() {
 
-        GetData getData = new  GetData();
+        /*which fragments load data init it*/
+        GetData getData = new GetData();
         getData.execute();
 
     }
@@ -107,13 +111,14 @@ public class Bangla_twoFragment extends Fragment {
                 JSONObject jsonObject = new JSONObject(s);
 
                 // database info
-                JSONArray jsonArray = jsonObject.getJSONArray("bangla_second");
+                JSONArray jsonArray = jsonObject.getJSONArray("english_first");
 
                 for (int i = 0; i < jsonArray.length(); i++) {
+
                     JSONObject jsonObject1 = jsonArray.getJSONObject(i);
 
                     /*create model class variable, object*/
-                    McqModel modelClass = new McqModel();
+                    EnglishModel modelClass = new EnglishModel();
 
                     /*set data on recyclerview*/
                     modelClass.setMcq_no(jsonObject1.getString("mcq_no"));
@@ -143,10 +148,10 @@ public class Bangla_twoFragment extends Fragment {
         }
     }
 
-    private void PutDataIntoRecyclerview(List<McqModel> list) {
+    private void PutDataIntoRecyclerview(List<EnglishModel> list) {
 
         progressBar.setVisibility(View.INVISIBLE);
-        McqAdapter customAdapter = new McqAdapter(getContext(), list);
+        EnglishAdapter customAdapter = new EnglishAdapter(getContext(), list);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(customAdapter);
 

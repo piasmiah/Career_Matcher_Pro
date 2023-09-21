@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.google.android.material.card.MaterialCardView;
 import com.trodev.careermatcherpro.mcq_part.bangla.BanglaMCQActivity;
+import com.trodev.careermatcherpro.mcq_part.english.EnglishMCQActivity;
 
 public class McqMainActivity extends AppCompatActivity {
 
@@ -34,6 +35,13 @@ public class McqMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(McqMainActivity.this, BanglaMCQActivity.class));
+            }
+        });
+
+        englishMC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(McqMainActivity.this, EnglishMCQActivity.class));
             }
         });
 

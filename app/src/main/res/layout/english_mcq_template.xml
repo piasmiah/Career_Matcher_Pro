@@ -29,8 +29,8 @@
                 android:id="@+id/serialTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/kalpurush"
-                android:text="০১ "
+                android:fontFamily="@font/poppins_regular"
+                android:text="01 "
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -40,10 +40,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:fontFamily="@font/kalpurush"
-                android:text="এমসিকিউ প্রশ্ন"
+                android:fontFamily="@font/poppins_regular"
+                android:text="mcq questions"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -59,8 +59,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/kalpurush"
-                android:text="(ক) "
+                android:fontFamily="@font/poppins_regular"
+                android:text="(a) "
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -71,8 +71,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="2"
-                android:fontFamily="@font/kalpurush"
-                android:text="পদবী"
+                android:fontFamily="@font/poppins_regular"
+                android:text="mcq a"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -80,8 +80,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/kalpurush"
-                android:text="(খ) "
+                android:fontFamily="@font/poppins_regular"
+                android:text="(b) "
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -92,8 +92,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="2"
-                android:fontFamily="@font/kalpurush"
-                android:text="পদবী"
+                android:fontFamily="@font/poppins_regular"
+                android:text="mcq b"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -111,8 +111,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/kalpurush"
-                android:text="(গ) "
+                android:fontFamily="@font/poppins_regular"
+                android:text="(c) "
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -123,8 +123,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="2"
-                android:fontFamily="@font/kalpurush"
-                android:text="পদবী"
+                android:fontFamily="@font/poppins_regular"
+                android:text="mcq c"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -132,8 +132,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/kalpurush"
-                android:text="(ঘ) "
+                android:fontFamily="@font/poppins_regular"
+                android:text="(d) "
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -144,8 +144,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="2"
-                android:fontFamily="@font/kalpurush"
-                android:text="পদবী"
+                android:fontFamily="@font/poppins_regular"
+                android:text="mcq d"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -177,8 +177,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/kalpurush"
-                    android:text="উত্তরঃ-"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="answer:-"
                     android:textColor="@color/app_color"
                     android:textSize="15sp" />
 
@@ -187,8 +187,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:fontFamily="@font/kalpurush"
-                    android:text="উত্তর"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="answer"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
@@ -200,9 +200,9 @@
                 android:layout_below="@+id/ansLl"
                 android:fontFamily="@font/poppins_regular"
                 android:gravity="right"
-                android:text="স্বত্বাধিকারীঃ- career matcher pro"
+                android:text="Proprietor:- career matcher pro"
                 android:textColor="@color/app_color"
-                android:textSize="10sp" />
+                android:textSize="12sp" />
 
         </RelativeLayout>
 

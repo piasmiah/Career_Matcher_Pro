@@ -1,4 +1,4 @@
-package com.trodev.careermatcherpro.mcq_part;
+package com.trodev.careermatcherpro.mcq_part.bangla;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -41,7 +41,7 @@ public class McqAdapter extends RecyclerView.Adapter<McqAdapter.MyViewHolder> {
         McqModel model = list.get(position);
 
         /*set data on short views*/
-        holder.serialTv.setText(model.getMcq_no()+".");
+        holder.serialTv.setText(model.getMcq_no() + ".");
         holder.questionTv.setText(model.getGrp_ques());
         holder.firstTv.setText(model.getFirst());
         holder.secondTv.setText(model.getSecond());
@@ -65,7 +65,7 @@ public class McqAdapter extends RecyclerView.Adapter<McqAdapter.MyViewHolder> {
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView serialTv, questionTv, firstTv, secondTv, thirdTv ,fourthTv, ansTv ;
+        TextView serialTv, questionTv, firstTv, secondTv, thirdTv, fourthTv, ansTv;
         CardView cardView;
         ImageView dropdown;
 

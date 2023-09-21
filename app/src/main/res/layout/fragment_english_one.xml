@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mcq_part.bangla.Bangla_oneFragment">
+    tools:context=".mcq_part.english.English_oneFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -13,7 +13,9 @@
             android:id="@+id/dataRv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="10dp" />
+            android:layout_margin="10dp"
+            tools:listitem="@layout/english_mcq_template"
+            />
 
         <ProgressBar
             android:id="@+id/progress_bar"

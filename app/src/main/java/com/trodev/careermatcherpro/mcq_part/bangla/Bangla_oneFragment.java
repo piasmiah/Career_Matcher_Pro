@@ -13,8 +13,6 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
 import com.trodev.careermatcherpro.R;
-import com.trodev.careermatcherpro.mcq_part.McqAdapter;
-import com.trodev.careermatcherpro.mcq_part.McqModel;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -26,9 +24,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Bangla_oneFragment extends Fragment {
-
     private static final String json_url = "https://zobayer-dev-e12aa.web.app/bangla_mcq.json";
     RecyclerView recyclerView;
     List<McqModel> list;

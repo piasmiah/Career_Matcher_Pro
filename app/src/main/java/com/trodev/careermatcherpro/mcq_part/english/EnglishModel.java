@@ -1,15 +1,14 @@
-package com.trodev.careermatcherpro.mcq_part;
+package com.trodev.careermatcherpro.mcq_part.english;
 
-public class McqModel {
+public class EnglishModel {
 
     String mcq_no, grp_ques, first, second, third, fourth, ans;
     private boolean expandable;
 
-    public McqModel() {
+    public EnglishModel() {
     }
 
-
-    public McqModel(String mcq_no, String grp_ques, String first, String second, String third, String fourth, String ans) {
+    public EnglishModel(String mcq_no, String grp_ques, String first, String second, String third, String fourth, String ans) {
         this.mcq_no = mcq_no;
         this.grp_ques = grp_ques;
         this.first = first;
