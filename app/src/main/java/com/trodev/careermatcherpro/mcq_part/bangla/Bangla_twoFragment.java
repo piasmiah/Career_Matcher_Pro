@@ -55,7 +55,7 @@ public class Bangla_twoFragment extends Fragment {
 
     private void loadData() {
 
-        GetData getData = new  GetData();
+        GetData getData = new GetData();
         getData.execute();
 
     }
@@ -107,6 +107,7 @@ public class Bangla_twoFragment extends Fragment {
                 JSONObject jsonObject = new JSONObject(s);
 
                 // database info
+                /*clear this database topic name*/
                 JSONArray jsonArray = jsonObject.getJSONArray("bangla_second");
 
                 for (int i = 0; i < jsonArray.length(); i++) {

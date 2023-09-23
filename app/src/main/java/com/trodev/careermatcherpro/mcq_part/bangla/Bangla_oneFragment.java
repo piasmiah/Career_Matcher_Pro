@@ -54,6 +54,9 @@ public class Bangla_oneFragment extends Fragment {
 
     private void loadData() {
 
+        /*when you copy this code and paste new activity then you get a error with
+        * Bangla_secondFragment.GetData getdata = new Bangla_secondFragment.GetData
+        * then you will remove just ( Bangla_secondFragment. ), so error also resolved */
         GetData getData = new GetData();
         getData.execute();
 
