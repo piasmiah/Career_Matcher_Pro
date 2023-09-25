@@ -15,18 +15,29 @@ public class englishPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
 
-        if (position == 0) {
+        /*dear developer if you add any fragments please out "else" part and add else if(position == 4) starter point*/
+
+        if (position == 0) { // 01
             return new English_oneFragment();
-        } else if (position == 1) {
+        } else if (position == 1) { //02
             return new English_twoFragment();
-        } else{
+        } else if (position == 2) { // 03
             return new English_threeFragment();
+        } else if (position == 3) { //04
+            return new English_fourFragment();
+        } else { //05
+            return new English_fiveFragment();
         }
+
+        /* else if (position == 2) {
+            return new English_threeFragment();
+        }*/
+
     }
 
     @Override
     public int getCount() {
-        return 3;
+        return 5;
     }
 
     @Nullable
@@ -37,9 +48,17 @@ public class englishPagerAdapter extends FragmentPagerAdapter {
             return "01";
         } else if (position == 1) {
             return "02";
-        }else {
+        } else if (position == 2) {
             return "03";
+        } else if (position == 3) {
+            return "04";
+        } else {
+            return "05";
         }
+
+        /*else if (position == 2) {
+            return "03";
+        }*/
 
     }
 }
