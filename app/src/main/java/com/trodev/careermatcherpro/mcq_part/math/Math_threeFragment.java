@@ -1,16 +1,15 @@
-package com.trodev.careermatcherpro.mcq_part.english;
+package com.trodev.careermatcherpro.mcq_part.math;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.trodev.careermatcherpro.R;
 
@@ -25,21 +24,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class English_threeFragment extends Fragment {
+public class Math_threeFragment extends Fragment {
 
-    private static final String json_url = "https://zobayer-dev-e12aa.web.app/english_mcq.json";
+    private static final String json_url = "https://zobayer-dev-e12aa.web.app/math_mcq.json";
     RecyclerView recyclerView;
-    List<EnglishModel> list;
+    List<MathModel> list;
     ProgressBar progressBar;
 
-    public English_threeFragment() {
+    public Math_threeFragment() {
         // Required empty public constructor
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_english_three, container, false);
+        View view = inflater.inflate(R.layout.fragment_math_three, container, false);
 
         /*init views*/
         recyclerView = view.findViewById(R.id.dataRv);
@@ -108,14 +107,14 @@ public class English_threeFragment extends Fragment {
                 JSONObject jsonObject = new JSONObject(s);
 
                 // database info
-                JSONArray jsonArray = jsonObject.getJSONArray("english_third");
+                JSONArray jsonArray = jsonObject.getJSONArray("math_third");
 
                 for (int i = 0; i < jsonArray.length(); i++) {
 
                     JSONObject jsonObject1 = jsonArray.getJSONObject(i);
 
                     /*create model class variable, object*/
-                    EnglishModel modelClass = new EnglishModel();
+                    MathModel modelClass = new MathModel();
 
                     /*set data on recyclerview*/
                     modelClass.setMcq_no(jsonObject1.getString("mcq_no"));
@@ -145,10 +144,10 @@ public class English_threeFragment extends Fragment {
         }
     }
 
-    private void PutDataIntoRecyclerview(List<EnglishModel> list) {
+    private void PutDataIntoRecyclerview(List<MathModel> list) {
 
         progressBar.setVisibility(View.INVISIBLE);
-        EnglishAdapter customAdapter = new EnglishAdapter(getContext(), list);
+        MathAdapter customAdapter = new MathAdapter(getContext(), list);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(customAdapter);
 

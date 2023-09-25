@@ -55,7 +55,7 @@ public class English_fourFragment extends Fragment {
     private void loadData() {
 
         /*which fragments load data init it*/
-        English_fourFragment.GetData getData = new English_fourFragment.GetData();
+        GetData getData = new GetData();
         getData.execute();
 
     }
