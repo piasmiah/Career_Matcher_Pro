@@ -1,4 +1,4 @@
-package com.trodev.careermatcherpro.mcq_part.math;
+package com.trodev.careermatcherpro.mcq_part.computer;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -23,20 +23,20 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Math_twoFragment extends Fragment {
+public class Computer_twoFragment extends Fragment {
 
-    private static final String json_url = "https://zobayer-dev-e12aa.web.app/math_mcq.json";
+    private static final String json_url = "https://zobayer-dev-e12aa.web.app/computer_mcq.json";
     RecyclerView recyclerView;
-    List<MathModel> list;
+    List<ComputerModel> list;
     ProgressBar progressBar;
 
-    public Math_twoFragment() {
+    public Computer_twoFragment() {
         // Required empty public constructor
     }
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_math_two, container, false);
+        View view = inflater.inflate(R.layout.fragment_computer_two, container, false);
 
         /*init views*/
         recyclerView = view.findViewById(R.id.dataRv);
@@ -104,14 +104,14 @@ public class Math_twoFragment extends Fragment {
                 JSONObject jsonObject = new JSONObject(s);
 
                 // database info
-                JSONArray jsonArray = jsonObject.getJSONArray("math_second");
+                JSONArray jsonArray = jsonObject.getJSONArray("computer_second");
 
                 for (int i = 0; i < jsonArray.length(); i++) {
 
                     JSONObject jsonObject1 = jsonArray.getJSONObject(i);
 
                     /*create model class variable, object*/
-                    MathModel modelClass = new MathModel();
+                    ComputerModel modelClass = new ComputerModel();
 
                     /*set data on recyclerview*/
                     modelClass.setMcq_no(jsonObject1.getString("mcq_no"));
@@ -140,10 +140,10 @@ public class Math_twoFragment extends Fragment {
         }
     }
 
-    private void PutDataIntoRecyclerview(List<MathModel> list) {
+    private void PutDataIntoRecyclerview(List<ComputerModel> list) {
 
         progressBar.setVisibility(View.INVISIBLE);
-        MathAdapter customAdapter = new MathAdapter(getContext(), list);
+        ComputerAdapter customAdapter = new ComputerAdapter(getContext(), list);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(customAdapter);
 

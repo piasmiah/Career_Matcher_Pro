@@ -1,4 +1,4 @@
-package com.trodev.careermatcherpro.mcq_part.math;
+package com.trodev.careermatcherpro.mcq_part.bangla;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -23,20 +23,21 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Math_twoFragment extends Fragment {
-
-    private static final String json_url = "https://zobayer-dev-e12aa.web.app/math_mcq.json";
+public class Bangla_fiveFragment extends Fragment {
+    private static final String json_url = "https://zobayer-dev-e12aa.web.app/bangla_mcq.json";
     RecyclerView recyclerView;
-    List<MathModel> list;
+    List<McqModel> list;
     ProgressBar progressBar;
 
-    public Math_twoFragment() {
+    public Bangla_fiveFragment() {
         // Required empty public constructor
     }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_math_two, container, false);
+        View view = inflater.inflate(R.layout.fragment_bangla_five, container, false);
 
         /*init views*/
         recyclerView = view.findViewById(R.id.dataRv);
@@ -52,11 +53,14 @@ public class Math_twoFragment extends Fragment {
 
     private void loadData() {
 
-        /*which fragments load data init it*/
+        /*when you copy this code and paste new activity then you get a error with
+        * Bangla_secondFragment.GetData getdata = new Bangla_secondFragment.GetData
+        * then you will remove just ( Bangla_secondFragment. ), so error also resolved */
         GetData getData = new GetData();
         getData.execute();
 
     }
+
 
     public class GetData extends AsyncTask<String, String, String> {
         @Override
@@ -104,14 +108,13 @@ public class Math_twoFragment extends Fragment {
                 JSONObject jsonObject = new JSONObject(s);
 
                 // database info
-                JSONArray jsonArray = jsonObject.getJSONArray("math_second");
+                JSONArray jsonArray = jsonObject.getJSONArray("bangla_five");
 
                 for (int i = 0; i < jsonArray.length(); i++) {
-
                     JSONObject jsonObject1 = jsonArray.getJSONObject(i);
 
                     /*create model class variable, object*/
-                    MathModel modelClass = new MathModel();
+                    McqModel modelClass = new McqModel();
 
                     /*set data on recyclerview*/
                     modelClass.setMcq_no(jsonObject1.getString("mcq_no"));
@@ -128,6 +131,7 @@ public class Math_twoFragment extends Fragment {
 
                     modelClass.setAns(jsonObject1.getString("ans"));
 
+
                     /*add model data on empty model class*/
                     list.add(modelClass);
                 }
@@ -140,10 +144,10 @@ public class Math_twoFragment extends Fragment {
         }
     }
 
-    private void PutDataIntoRecyclerview(List<MathModel> list) {
+    private void PutDataIntoRecyclerview(List<McqModel> list) {
 
         progressBar.setVisibility(View.INVISIBLE);
-        MathAdapter customAdapter = new MathAdapter(getContext(), list);
+        McqAdapter customAdapter = new McqAdapter(getContext(), list);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(customAdapter);
 

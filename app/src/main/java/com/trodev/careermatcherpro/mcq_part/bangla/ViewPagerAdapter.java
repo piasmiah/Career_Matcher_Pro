@@ -19,15 +19,29 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             return new Bangla_oneFragment();
         } else if (position == 1) {
             return new Bangla_twoFragment();
-        } else{
+        } else if (position == 2) {
             return new Bangla_threeFragment();
+        } else if (position == 3) {
+            return new Bangla_fourFragment();
+        } else if (position == 4) {
+            return new Bangla_fiveFragment();
+        } else if (position == 5) {
+            return new Bangla_sixFragment();
+        } else if (position == 6) {
+            return new Bangla_sevenFragment();
+        } else if (position == 7) {
+            return new Bangla_eightFragment();
+        } else if (position == 8) {
+            return new Bangla_nineFragment();
+        } else{
+            return new Bangla_tenFragment();
         }
 
     }
 
     @Override
     public int getCount() {
-        return 3;
+        return 10;
     }
 
     @Nullable
@@ -38,8 +52,22 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             return "০১";
         } else if (position == 1) {
             return "০২";
-        }else {
+        } else if (position == 2) {
             return "০৩";
+        } else if (position == 3) {
+            return "০৪";
+        } else if (position == 4) {
+            return "০৫";
+        } else if (position == 5) {
+            return "০৬";
+        } else if (position == 6) {
+            return "০৭";
+        } else if (position == 7) {
+            return "০৮";
+        } else if (position == 8) {
+            return "০৯";
+        } else {
+            return "১০";
         }
 
     }

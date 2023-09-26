@@ -7,8 +7,7 @@ import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
 import com.trodev.careermatcherpro.R;
-import com.trodev.careermatcherpro.mcq_part.bangla.ViewPagerAdapter;
-import com.trodev.careermatcherpro.mcq_part.english.englishPagerAdapter;
+
 
 public class EnglishMCQActivity extends AppCompatActivity {
 
@@ -25,7 +24,7 @@ public class EnglishMCQActivity extends AppCompatActivity {
         tab = findViewById(R.id.tab);
         viewPager = findViewById(R.id.viewPager);
 
-        englishPagerAdapter adapter = new englishPagerAdapter(getSupportFragmentManager());
+        EnglishPagerAdapter adapter = new EnglishPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
 
         tab.setupWithViewPager(viewPager);

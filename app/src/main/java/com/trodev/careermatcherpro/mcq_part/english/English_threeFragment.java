@@ -36,6 +36,7 @@ public class English_threeFragment extends Fragment {
         // Required empty public constructor
     }
 
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -108,7 +109,7 @@ public class English_threeFragment extends Fragment {
                 JSONObject jsonObject = new JSONObject(s);
 
                 // database info
-                JSONArray jsonArray = jsonObject.getJSONArray("english_third");
+                JSONArray jsonArray = jsonObject.getJSONArray("english_three");
 
                 for (int i = 0; i < jsonArray.length(); i++) {
 

@@ -23,20 +23,22 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Math_twoFragment extends Fragment {
+
+public class Math_eightFragment extends Fragment {
 
     private static final String json_url = "https://zobayer-dev-e12aa.web.app/math_mcq.json";
     RecyclerView recyclerView;
     List<MathModel> list;
     ProgressBar progressBar;
 
-    public Math_twoFragment() {
+    public Math_eightFragment() {
         // Required empty public constructor
     }
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_math_two, container, false);
+        View view = inflater.inflate(R.layout.fragment_math_eight, container, false);
 
         /*init views*/
         recyclerView = view.findViewById(R.id.dataRv);
@@ -57,6 +59,7 @@ public class Math_twoFragment extends Fragment {
         getData.execute();
 
     }
+
 
     public class GetData extends AsyncTask<String, String, String> {
         @Override
@@ -104,7 +107,7 @@ public class Math_twoFragment extends Fragment {
                 JSONObject jsonObject = new JSONObject(s);
 
                 // database info
-                JSONArray jsonArray = jsonObject.getJSONArray("math_second");
+                JSONArray jsonArray = jsonObject.getJSONArray("math_eight");
 
                 for (int i = 0; i < jsonArray.length(); i++) {
 
@@ -127,6 +130,7 @@ public class Math_twoFragment extends Fragment {
                     modelClass.setFourth(jsonObject1.getString("fourth"));
 
                     modelClass.setAns(jsonObject1.getString("ans"));
+
 
                     /*add model data on empty model class*/
                     list.add(modelClass);

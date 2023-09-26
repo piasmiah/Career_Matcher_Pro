@@ -1,4 +1,4 @@
-package com.trodev.careermatcherpro.mcq_part.math;
+package com.trodev.careermatcherpro.mcq_part.english;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-public class mathPagerAdapter extends FragmentPagerAdapter {
-    public mathPagerAdapter(@NonNull FragmentManager fm) {
+public class EnglishPagerAdapter extends FragmentPagerAdapter {
+    public EnglishPagerAdapter(@NonNull FragmentManager fm) {
         super(fm);
     }
 
@@ -16,26 +16,27 @@ public class mathPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
 
         if (position == 0) {
-            return new Math_oneFragment();
+            return new English_oneFragment();
         } else if (position == 1) {
-            return new Math_twoFragment();
+            return new English_twoFragment();
         } else if (position == 2) {
-            return new Math_threeFragment();
+            return new English_threeFragment();
         } else if (position == 3) {
-            return new Math_fourFragment();
+            return new English_fourFragment();
         } else if (position == 4) {
-            return new Math_fiveFragment();
+            return new English_fiveFragment();
         } else if (position == 5) {
-            return new Math_sixFragment();
+            return new English_sixFragment();
         } else if (position == 6) {
-            return new Math_sevenFragment();
+            return new English_sevenFragment();
         } else if (position == 7) {
-            return new Math_eightFragment();
+            return new English_eightFragment();
         } else if (position == 8) {
-            return new Math_nineFragment();
-    } else{
-            return new Math_tenFragment();
+            return new English_nineFragment();
+        } else{
+            return new English_tenFragment();
         }
+
     }
 
     @Override
@@ -48,25 +49,26 @@ public class mathPagerAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
 
         if (position == 0) {
-            return "01";
+            return "০১";
         } else if (position == 1) {
-            return "02";
+            return "০২";
         } else if (position == 2) {
-            return "03";
+            return "০৩";
         } else if (position == 3) {
-            return "04";
+            return "০৪";
         } else if (position == 4) {
-            return "05";
+            return "০৫";
         } else if (position == 5) {
-            return "06";
+            return "০৬";
         } else if (position == 6) {
-            return "07";
+            return "০৭";
         } else if (position == 7) {
-            return "08";
+            return "০৮";
         } else if (position == 8) {
-            return "09";
-    }else {
-            return "10";
+            return "০৯";
+        } else {
+            return "১০";
         }
+
     }
 }

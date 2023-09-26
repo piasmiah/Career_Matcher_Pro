@@ -1,4 +1,4 @@
-package com.trodev.careermatcherpro.mcq_part.math;
+package com.trodev.careermatcherpro.mcq_part.computer;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-public class mathPagerAdapter extends FragmentPagerAdapter {
-    public mathPagerAdapter(@NonNull FragmentManager fm) {
+public class computerPagerAdapter extends FragmentPagerAdapter {
+    public computerPagerAdapter(@NonNull FragmentManager fm) {
         super(fm);
     }
 
@@ -16,25 +16,25 @@ public class mathPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
 
         if (position == 0) {
-            return new Math_oneFragment();
+            return new Computer_oneFragment();
         } else if (position == 1) {
-            return new Math_twoFragment();
+            return new Computer_twoFragment();
         } else if (position == 2) {
-            return new Math_threeFragment();
+            return new Computer_threeFragment();
         } else if (position == 3) {
-            return new Math_fourFragment();
+            return new Computer_fourFragment();
         } else if (position == 4) {
-            return new Math_fiveFragment();
+            return new Computer_fiveFragment();
         } else if (position == 5) {
-            return new Math_sixFragment();
+            return new Computer_sixFragment();
         } else if (position == 6) {
-            return new Math_sevenFragment();
+            return new Computer_sevenFragment();
         } else if (position == 7) {
-            return new Math_eightFragment();
+            return new Computer_eightFragment();
         } else if (position == 8) {
-            return new Math_nineFragment();
+            return new Computer_nineFragment();
     } else{
-            return new Math_tenFragment();
+            return new Computer_tenFragment();
         }
     }
 
