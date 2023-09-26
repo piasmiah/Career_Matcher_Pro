@@ -1,4 +1,4 @@
-package com.trodev.careermatcherpro.mcq_part.bangla;
+package com.trodev.careermatcherpro.mcq_part.computer;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-public class ViewPagerAdapter extends FragmentPagerAdapter {
-    public ViewPagerAdapter(@NonNull FragmentManager fm) {
+public class computerPagerAdapter extends FragmentPagerAdapter {
+    public computerPagerAdapter(@NonNull FragmentManager fm) {
         super(fm);
     }
 
@@ -16,27 +16,26 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
 
         if (position == 0) {
-            return new Bangla_oneFragment();
+            return new Computer_oneFragment();
         } else if (position == 1) {
-            return new Bangla_twoFragment();
+            return new Computer_twoFragment();
         } else if (position == 2) {
-            return new Bangla_threeFragment();
+            return new Computer_threeFragment();
         } else if (position == 3) {
-            return new Bangla_fourFragment();
+            return new Computer_fourFragment();
         } else if (position == 4) {
-            return new Bangla_fiveFragment();
+            return new Computer_fiveFragment();
         } else if (position == 5) {
-            return new Bangla_sixFragment();
+            return new Computer_sixFragment();
         } else if (position == 6) {
-            return new Bangla_sevenFragment();
+            return new Computer_sevenFragment();
         } else if (position == 7) {
-            return new Bangla_eightFragment();
+            return new Computer_eightFragment();
         } else if (position == 8) {
-            return new Bangla_nineFragment();
-        } else{
-            return new Bangla_tenFragment();
+            return new Computer_nineFragment();
+    } else{
+            return new Computer_tenFragment();
         }
-
     }
 
     @Override
@@ -49,26 +48,25 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
 
         if (position == 0) {
-            return "০১";
+            return "01";
         } else if (position == 1) {
-            return "০২";
+            return "02";
         } else if (position == 2) {
-            return "০৩";
+            return "03";
         } else if (position == 3) {
-            return "০৪";
+            return "04";
         } else if (position == 4) {
-            return "০৫";
+            return "05";
         } else if (position == 5) {
-            return "০৬";
+            return "06";
         } else if (position == 6) {
-            return "০৭";
+            return "07";
         } else if (position == 7) {
-            return "০৮";
+            return "08";
         } else if (position == 8) {
-            return "০৯";
-        } else {
-            return "১০";
+            return "09";
+    }else {
+            return "10";
         }
-
     }
 }

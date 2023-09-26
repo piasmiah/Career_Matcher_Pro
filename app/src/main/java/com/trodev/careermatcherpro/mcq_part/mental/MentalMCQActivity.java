@@ -1,30 +1,29 @@
-package com.trodev.careermatcherpro.mcq_part.english;
+package com.trodev.careermatcherpro.mcq_part.mental;
+
+import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import android.os.Bundle;
-
 import com.google.android.material.tabs.TabLayout;
 import com.trodev.careermatcherpro.R;
 
-
-public class EnglishMCQActivity extends AppCompatActivity {
+public class MentalMCQActivity extends AppCompatActivity {
 
     TabLayout tab;
     ViewPager viewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_english_mcqactivity);
+        setContentView(R.layout.activity_mental_mcqactivity);
 
-        getSupportActionBar().setTitle("English");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Mental");
+        /*getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
 
         tab = findViewById(R.id.tab);
         viewPager = findViewById(R.id.viewPager);
 
-        EnglishPagerAdapter adapter = new EnglishPagerAdapter(getSupportFragmentManager());
+        mentalPagerAdapter adapter = new mentalPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
 
         tab.setupWithViewPager(viewPager);

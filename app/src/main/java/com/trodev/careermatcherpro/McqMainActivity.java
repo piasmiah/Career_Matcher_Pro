@@ -8,7 +8,10 @@ import android.view.View;
 
 import com.google.android.material.card.MaterialCardView;
 import com.trodev.careermatcherpro.mcq_part.bangla.BanglaMCQActivity;
+import com.trodev.careermatcherpro.mcq_part.computer.ComputerMCQActivity;
 import com.trodev.careermatcherpro.mcq_part.english.EnglishMCQActivity;
+import com.trodev.careermatcherpro.mcq_part.math.MathMCQActivity;
+import com.trodev.careermatcherpro.mcq_part.mental.MentalMCQActivity;
 
 public class McqMainActivity extends AppCompatActivity {
 
@@ -45,5 +48,25 @@ public class McqMainActivity extends AppCompatActivity {
             }
         });
 
+        mathemeticalMC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(McqMainActivity.this, MathMCQActivity.class));
+            }
+        });
+
+        mentalMC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(McqMainActivity.this, MentalMCQActivity.class));
+            }
+        });
+
+        computerMC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(McqMainActivity.this, ComputerMCQActivity.class));
+            }
+        });
     }
 }

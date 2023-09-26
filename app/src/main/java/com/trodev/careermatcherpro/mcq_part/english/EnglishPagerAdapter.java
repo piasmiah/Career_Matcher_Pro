@@ -1,4 +1,4 @@
-package com.trodev.careermatcherpro.mcq_part.bangla;
+package com.trodev.careermatcherpro.mcq_part.english;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-public class ViewPagerAdapter extends FragmentPagerAdapter {
-    public ViewPagerAdapter(@NonNull FragmentManager fm) {
+public class EnglishPagerAdapter extends FragmentPagerAdapter {
+    public EnglishPagerAdapter(@NonNull FragmentManager fm) {
         super(fm);
     }
 
@@ -16,25 +16,25 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
 
         if (position == 0) {
-            return new Bangla_oneFragment();
+            return new English_oneFragment();
         } else if (position == 1) {
-            return new Bangla_twoFragment();
+            return new English_twoFragment();
         } else if (position == 2) {
-            return new Bangla_threeFragment();
+            return new English_threeFragment();
         } else if (position == 3) {
-            return new Bangla_fourFragment();
+            return new English_fourFragment();
         } else if (position == 4) {
-            return new Bangla_fiveFragment();
+            return new English_fiveFragment();
         } else if (position == 5) {
-            return new Bangla_sixFragment();
+            return new English_sixFragment();
         } else if (position == 6) {
-            return new Bangla_sevenFragment();
+            return new English_sevenFragment();
         } else if (position == 7) {
-            return new Bangla_eightFragment();
+            return new English_eightFragment();
         } else if (position == 8) {
-            return new Bangla_nineFragment();
+            return new English_nineFragment();
         } else{
-            return new Bangla_tenFragment();
+            return new English_tenFragment();
         }
 
     }

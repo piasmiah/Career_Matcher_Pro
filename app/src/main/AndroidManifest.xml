@@ -25,6 +25,17 @@
         android:theme="@style/Theme.CareerMatcherPro"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
+        <activity android:name=".mcq_part.computer.ComputerMCQActivity"
+            android:exported="false"
+            android:parentActivityName=".McqMainActivity"/>
+        <activity android:name=".mcq_part.mental.MentalMCQActivity"
+            android:exported="false"
+            android:parentActivityName=".McqMainActivity"/>
+        <activity
+            android:name=".mcq_part.math.MathMCQActivity"
+            android:exported="false"
+            android:parentActivityName=".McqMainActivity"/>
         <activity
             android:name=".mcq_part.english.EnglishMCQActivity"
             android:exported="false"
