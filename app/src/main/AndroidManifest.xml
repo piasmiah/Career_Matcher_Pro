@@ -26,6 +26,21 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
 
+        <activity android:name=".mcq_part.internationalAff.InternationalAffMCQActivity"
+            android:exported="false"
+            android:parentActivityName=".McqMainActivity"/>
+        <activity android:name=".mcq_part.bangladeshAff.BangladeshAffMCQActivity"
+            android:exported="false"
+            android:parentActivityName=".McqMainActivity"/>
+        <activity android:name=".mcq_part.general.GeneralMCQActivity"
+            android:exported="false"
+            android:parentActivityName=".McqMainActivity"/>
+        <activity android:name=".mcq_part.geography.GeographyMCQActivity"
+            android:exported="false"
+            android:parentActivityName=".McqMainActivity"/>
+        <activity android:name=".mcq_part.ethics.EthicsMCQActivity"
+            android:exported="false"
+            android:parentActivityName=".McqMainActivity"/>
         <activity android:name=".mcq_part.computer.ComputerMCQActivity"
             android:exported="false"
             android:parentActivityName=".McqMainActivity"/>

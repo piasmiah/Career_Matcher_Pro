@@ -8,8 +8,13 @@ import android.view.View;
 
 import com.google.android.material.card.MaterialCardView;
 import com.trodev.careermatcherpro.mcq_part.bangla.BanglaMCQActivity;
+import com.trodev.careermatcherpro.mcq_part.bangladeshAff.BangladeshAffMCQActivity;
 import com.trodev.careermatcherpro.mcq_part.computer.ComputerMCQActivity;
 import com.trodev.careermatcherpro.mcq_part.english.EnglishMCQActivity;
+import com.trodev.careermatcherpro.mcq_part.ethics.EthicsMCQActivity;
+import com.trodev.careermatcherpro.mcq_part.general.GeneralMCQActivity;
+import com.trodev.careermatcherpro.mcq_part.geography.GeographyMCQActivity;
+import com.trodev.careermatcherpro.mcq_part.internationalAff.InternationalAffMCQActivity;
 import com.trodev.careermatcherpro.mcq_part.math.MathMCQActivity;
 import com.trodev.careermatcherpro.mcq_part.mental.MentalMCQActivity;
 
@@ -40,14 +45,12 @@ public class McqMainActivity extends AppCompatActivity {
                 startActivity(new Intent(McqMainActivity.this, BanglaMCQActivity.class));
             }
         });
-
         englishMC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(McqMainActivity.this, EnglishMCQActivity.class));
             }
         });
-
         mathemeticalMC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,11 +64,40 @@ public class McqMainActivity extends AppCompatActivity {
                 startActivity(new Intent(McqMainActivity.this, MentalMCQActivity.class));
             }
         });
-
         computerMC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(McqMainActivity.this, ComputerMCQActivity.class));
+            }
+        });
+        ethicsMc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(McqMainActivity.this, EthicsMCQActivity.class));
+            }
+        });
+        geographyMc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(McqMainActivity.this, GeographyMCQActivity.class));
+            }
+        });
+        generalMC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(McqMainActivity.this, GeneralMCQActivity.class));
+            }
+        });
+        bangladeshAffMC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(McqMainActivity.this, BangladeshAffMCQActivity.class));
+            }
+        });
+        internationalAffMC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(McqMainActivity.this, InternationalAffMCQActivity.class));
             }
         });
     }
