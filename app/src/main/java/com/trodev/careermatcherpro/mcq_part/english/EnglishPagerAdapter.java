@@ -49,25 +49,25 @@ public class EnglishPagerAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
 
         if (position == 0) {
-            return "০১";
+            return "01";
         } else if (position == 1) {
-            return "০২";
+            return "02";
         } else if (position == 2) {
-            return "০৩";
+            return "03";
         } else if (position == 3) {
-            return "০৪";
+            return "04";
         } else if (position == 4) {
-            return "০৫";
+            return "05";
         } else if (position == 5) {
-            return "০৬";
+            return "06";
         } else if (position == 6) {
-            return "০৭";
+            return "07";
         } else if (position == 7) {
-            return "০৮";
+            return "08";
         } else if (position == 8) {
-            return "০৯";
+            return "09";
         } else {
-            return "১০";
+            return "10";
         }
 
     }
