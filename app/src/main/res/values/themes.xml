@@ -40,5 +40,9 @@
         <item name="android:fontFamily">@font/kalpurush</item>
     </style>
 
+    <style name="Circular">
+        <item name="cornerSize">50%</item>
+    </style>
+
     <style name="Theme.CareerMatcherPro" parent="Base.Theme.CareerMatcherPro" />
 </resources>

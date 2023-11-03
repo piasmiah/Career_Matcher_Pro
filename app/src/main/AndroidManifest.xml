@@ -26,6 +26,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
 
+        <activity android:name=".activity.UserListActivity"
+            android:exported="false"/>
+        <activity android:name=".activity.LoginActivity"
+            android:exported="false"/>
+        <activity android:name=".activity.SignupActivity"
+            android:exported="false"/>
+
         <activity android:name=".mcq_part.internationalAff.InternationalAffMCQActivity"
             android:exported="false"
             android:parentActivityName=".McqMainActivity"/>
