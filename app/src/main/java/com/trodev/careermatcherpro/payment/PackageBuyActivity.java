@@ -13,9 +13,13 @@ import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.trodev.careermatcherpro.R;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class PackageBuyActivity extends AppCompatActivity {
 
@@ -89,19 +93,35 @@ public class PackageBuyActivity extends AppCompatActivity {
         String email = emailEt.getText().toString().trim();
         String phone = phoneEt.getText().toString().trim();
         String payments = payment.getText().toString().trim();
-        String transaction = transactionEt.getText().toString().trim();
+        String transactions = transactionEt.getText().toString().trim();
         String packages = autoCompleteTextView.getText().toString();
         String status = statusTv.getText().toString();
 
-        if (!name.isEmpty() && !email.isEmpty()) {
+        Calendar calForDate = Calendar.getInstance();
+        SimpleDateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
+        String date = currentDate.format(calForDate.getTime());
 
-            String userId = databaseReference.push().getKey();
-            PaymentModel paymentModel = new PaymentModel(name, email, phone, payments, transaction, packages, status);
-            databaseReference.child(userId).setValue(paymentModel);
+        Calendar calForTime = Calendar.getInstance();
+        SimpleDateFormat currentTime = new SimpleDateFormat("hh:mm a");
+        String time = currentTime.format(calForTime.getTime());
 
-            Toast.makeText(this, "Payment details send successful", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "Payment details send unsuccessful", Toast.LENGTH_SHORT).show();
+
+        String Key = databaseReference.push().getKey();
+
+        if (Key != null) {
+            PackageModel emailModel = new PackageModel(Key, name, email, phone, payments, transactions, packages, status, date, time, FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+            /*these data save on new uid and also user id*/
+            // reference.child(Key).setValue(emailModel);
+
+            /*these data save on user id*/
+            databaseReference.child(Key).setValue(emailModel);
+
+            Toast.makeText(this, "save successful", Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            Toast.makeText(this, "un-successful", Toast.LENGTH_SHORT).show();
         }
     }
 

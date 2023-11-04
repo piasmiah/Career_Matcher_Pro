@@ -72,7 +72,8 @@
             android:parentActivityName=".McqMainActivity"/>
         <activity
             android:name=".payment.PackageBuyActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".activity.PremiumPackagesActivity"/>
         <activity
             android:name=".notification.NoticeViewActivity"
             android:exported="false"
