@@ -24,6 +24,8 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -42,18 +44,17 @@ public class CVActivity extends AppCompatActivity {
     ImageView imageIv;
     Uri imageUri;
     private MaterialButton upload_btn;
-    private FirebaseDatabase database;
+    // private FirebaseDatabase database;
     private FirebaseStorage storage;
 
     TextInputEditText payment_methodET, transactionEt;
-    TextInputEditText nameEt, parentsEt, addressEt, gmailEt, mobileEt, skillEt, eduEt, nationalityEt,
-            genderEt, religion_married_bloodET, langugae_skillET, extra_curriculmnET,
-            training_certificateET, experienceET, social_mediaET, templateEt;
+    TextInputEditText nameEt, parentsEt, addressEt, gmailEt, mobileEt, skillEt, eduEt, nationalityEt, genderEt, religion_married_bloodET, langugae_skillET, extra_curriculmnET, training_certificateET, experienceET, social_mediaET, templateEt;
 
     TextView statusTv;
     ProgressDialog progressDialog;
 
     LinearLayout templateLl;
+    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -144,7 +145,7 @@ public class CVActivity extends AppCompatActivity {
 
 
         /*firebase setup*/
-        database = FirebaseDatabase.getInstance();
+        // database = FirebaseDatabase.getInstance();
         storage = FirebaseStorage.getInstance();
 
         // #######################################
@@ -153,10 +154,7 @@ public class CVActivity extends AppCompatActivity {
         progressDialog.setIndeterminate(true);
         progressDialog.setCancelable(false);
 
-        progressDialog = ProgressDialog
-                .show(this,
-                        "আপনার আবেদনটি আপলোড হচ্ছে",
-                        "অপেক্ষা করুন");
+        progressDialog = ProgressDialog.show(this, "আপনার আবেদনটি আপলোড হচ্ছে", "অপেক্ষা করুন");
         progressDialog.hide();
 
     }
@@ -200,27 +198,30 @@ public class CVActivity extends AppCompatActivity {
                         userModel.setTraining_certificate(training_certificateET.getText().toString().trim());
                         userModel.setExperience(experienceET.getText().toString().trim());
                         userModel.setSocial_media(social_mediaET.getText().toString().trim());
-                        userModel.setStatustv(statusTv.getText().toString().trim());
+                        userModel.setStatus(statusTv.getText().toString().trim());
 
 
-                        database.getReference().child("user_cv").push().setValue(userModel)
-                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void unused) {
+                        databaseReference = FirebaseDatabase.getInstance().getReference("user_cv");
 
-                                        progressDialog.hide();
-                                        Toast.makeText(CVActivity.this, "আপলোড সম্পূর্ণ হয়েছে !!!", Toast.LENGTH_SHORT).show();
+                        String Key = databaseReference.push().getKey();
+                        userModel.setaID(Key);
+                        String key = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                        userModel.setuID(key);
 
-                                    }
-                                })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        progressDialog.hide();
-                                        Toast.makeText(CVActivity.this, "আপলোড সম্পূর্ণ হয় নাই\nআবার চেষ্টা করুন", Toast.LENGTH_SHORT).show();
+                        databaseReference.child(Key).setValue(userModel).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                progressDialog.hide();
+                                Toast.makeText(CVActivity.this, "আপলোড সম্পূর্ণ হয়েছে !!!", Toast.LENGTH_SHORT).show();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                progressDialog.hide();
+                                Toast.makeText(CVActivity.this, "আপলোড সম্পূর্ণ হয় নাই\nআবার চেষ্টা করুন", Toast.LENGTH_SHORT).show();
 
-                                    }
-                                });
+                            }
+                        });
 
                     }
                 });
@@ -234,29 +235,27 @@ public class CVActivity extends AppCompatActivity {
 
     private void uploadImage() {
 
-        Dexter.withContext(this)
-                .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
-                .withListener(new PermissionListener() {
-                    @Override
-                    public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
-                        Intent intent = new Intent();
-                        intent.setType("image/*");
-                        //  intent.setType("pdf/docs/ppt/*");
-                        intent.setAction(Intent.ACTION_GET_CONTENT);
-                        startActivityForResult(intent, 101);
-                    }
+        Dexter.withContext(this).withPermission(Manifest.permission.READ_EXTERNAL_STORAGE).withListener(new PermissionListener() {
+            @Override
+            public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                //  intent.setType("pdf/docs/ppt/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(intent, 101);
+            }
 
-                    @Override
-                    public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
-                        Toast.makeText(CVActivity.this, "Permission Denied", Toast.LENGTH_SHORT).show();
-                    }
+            @Override
+            public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
+                Toast.makeText(CVActivity.this, "Permission Denied", Toast.LENGTH_SHORT).show();
+            }
 
-                    @Override
-                    public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken permissionToken) {
-                        permissionToken.continuePermissionRequest();
+            @Override
+            public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken permissionToken) {
+                permissionToken.continuePermissionRequest();
 
-                    }
-                }).check();
+            }
+        }).check();
     }
 
     @Override

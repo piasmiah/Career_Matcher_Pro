@@ -27,9 +27,10 @@ import com.onesignal.debug.LogLevel;
 import com.trodev.careermatcherpro.activity.PremiumPackagesActivity;
 import com.trodev.careermatcherpro.activity.WebsiteActivity;
 import com.trodev.careermatcherpro.cv.CVActivity;
-import com.trodev.careermatcherpro.fragments.AboutFragment;
+import com.trodev.careermatcherpro.fragments.OrderFragment;
 import com.trodev.careermatcherpro.fragments.HomeFragment;
 import com.trodev.careermatcherpro.fragments.PdfFragment;
+import com.trodev.careermatcherpro.fragments.ProfileFragment;
 import com.trodev.careermatcherpro.fragments.VideoFragment;
 import com.trodev.careermatcherpro.notification.NotificationActivity;
 
@@ -143,10 +144,23 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if (i == 3) {
-                    setTitle("About Us");
+                    setTitle("Ordered Items");
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.frameLayout, new AboutFragment());
+                    fragmentTransaction.replace(R.id.frameLayout, new OrderFragment());
+                    fragmentTransaction.commit();
+
+
+                    smoothBottomBar.setBarBackgroundColor(Color.parseColor("#008937"));
+                    getWindow().setNavigationBarColor(Color.parseColor("#008937"));
+                    getWindow().setStatusBarColor(Color.parseColor("#008937"));
+                }
+
+                if (i == 4) {
+                    setTitle("Profile");
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.frameLayout, new ProfileFragment());
                     fragmentTransaction.commit();
 
 
