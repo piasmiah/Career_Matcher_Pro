@@ -45,7 +45,6 @@ dependencies {
     def multidex_version = "2.0.1"
     implementation "androidx.multidex:multidex:$multidex_version"
 
-    
     /*youtube*/
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0'
 
@@ -67,4 +66,9 @@ dependencies {
 
     // file open
     implementation 'com.karumi:dexter:6.2.3'
+
+    /*lottie animation*/
+    def lottieVersion = "3.4.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+
 }

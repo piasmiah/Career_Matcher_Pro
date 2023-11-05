@@ -1,5 +1,6 @@
 package com.trodev.careermatcherpro.fragments;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ShareCompat;
 import androidx.fragment.app.Fragment;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,11 +23,13 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.trodev.careermatcherpro.MainActivity;
+import com.trodev.careermatcherpro.McqMainActivity;
+import com.trodev.careermatcherpro.PrivacyActivity;
 import com.trodev.careermatcherpro.R;
 import com.trodev.careermatcherpro.activity.LoginActivity;
 import com.trodev.careermatcherpro.activity.UserListActivity;
 import com.trodev.careermatcherpro.User;
-
 
 public class ProfileFragment extends Fragment {
 
@@ -33,9 +37,7 @@ public class ProfileFragment extends Fragment {
     private DatabaseReference reference;
     private String userID;
     ImageView logout;
-
-    /*linear layout declear*/
-    LinearLayout contactLl, console_ll, userLl;
+    LinearLayout contactLl, console_ll, rateLl, shareLl, privacyLl;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -51,11 +53,10 @@ public class ProfileFragment extends Fragment {
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
 
-        final TextView nameET = view.findViewById(R.id.nameEt);
-        final TextView emailET = view.findViewById(R.id.emailTv);
-        final TextView numberET = view.findViewById(R.id.mobileTv);
-        final TextView passEt = view.findViewById(R.id.passTv);
-
+         TextView nameET = view.findViewById(R.id.nameEt);
+         TextView emailET = view.findViewById(R.id.emailTv);
+         TextView numberET = view.findViewById(R.id.mobileTv);
+         TextView passEt = view.findViewById(R.id.passTv);
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -74,8 +75,7 @@ public class ProfileFragment extends Fragment {
                     passEt.setText("Password: " + pass);
 
                     /*toast sms*/
-                    Toast.makeText(getActivity(), uname + " your data found", Toast.LENGTH_SHORT).show();
-
+                    Toast.makeText(getActivity(), uname + " info found", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -99,7 +99,9 @@ public class ProfileFragment extends Fragment {
         /*init views*/
         contactLl = view.findViewById(R.id.contactLl);
         console_ll = view.findViewById(R.id.console_ll);
-        userLl = view.findViewById(R.id.userLl);
+        rateLl = view.findViewById(R.id.rateLl);
+        shareLl = view.findViewById(R.id.shareLl);
+        privacyLl = view.findViewById(R.id.privacyLl);
 
         contactLl.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,34 +117,62 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        userLl.setOnClickListener(new View.OnClickListener() {
+        rateLl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                go_to_user();
+                rateUsOnGooglePlay();
+            }
+        });
+
+        shareLl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                share_apps();
+            }
+        });
+
+        privacyLl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), PrivacyActivity.class));
             }
         });
 
         return view;
     }
 
-    private void go_to_user() {
+    private void share_apps() {
 
-        startActivity(new Intent(getContext(), UserListActivity.class));
+        int applicationNameId = getContext().getApplicationInfo().labelRes;
+        final String appPackageName = getContext().getPackageName();
+        Intent i = new Intent(Intent.ACTION_SEND);
+        i.setType("text/plain");
+        i.putExtra(Intent.EXTRA_SUBJECT, getActivity().getString(applicationNameId));
+        String text = "Career Matcher Pro";
+        String link = "https://play.google.com/store/apps/details?id=" + appPackageName;
+        i.putExtra(Intent.EXTRA_TEXT, text + " " + link);
+        startActivity(Intent.createChooser(i, "choose share options"));
 
     }
 
+    public void rateUsOnGooglePlay() {
+
+        Uri marketUri = Uri.parse("https://play.google.com/store/apps/details?id=" + getActivity().getPackageName());
+        try {
+            getContext().startActivity(new Intent(Intent.ACTION_VIEW, marketUri));
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(getContext(), "Couldn't find PlayStore on this device", Toast.LENGTH_SHORT).show();
+        }
+    }
 
     private void go_to_email() {
 
         Intent intent = new Intent(Intent.ACTION_SEND);
-        String[] recipients = {"zobayer.dev@gmail.com"};
-        intent.putExtra(Intent.EXTRA_EMAIL, recipients);
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Contact for");
+        intent.setType("plain/text");
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"careermatcherpro@gmail.com"});
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Help of");
         intent.putExtra(Intent.EXTRA_TEXT, "Assalamualaikum, ");
-        intent.putExtra(Intent.EXTRA_CC, "ceo.trodev@gmail.com");
-        intent.setType("text/html");
-        intent.setPackage("com.google.android.gm");
-        startActivity(Intent.createChooser(intent, "Send mail"));
+        startActivity(Intent.createChooser(intent, ""));
 
     }
 

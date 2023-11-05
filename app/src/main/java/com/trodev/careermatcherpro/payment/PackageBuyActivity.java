@@ -50,7 +50,7 @@ public class PackageBuyActivity extends AppCompatActivity {
         autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(PackageBuyActivity.this, "আপনি" + autoCompleteTextView.getText().toString() + " সিলেক্ট করেছেন", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PackageBuyActivity.this, "আপনি " + autoCompleteTextView.getText().toString() + "  সিলেক্ট করেছেন", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -77,7 +77,10 @@ public class PackageBuyActivity extends AppCompatActivity {
         statusTv = findViewById(R.id.statusTv);
         uploadBtn = findViewById(R.id.upload_btn);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("package_payment");
+        databaseReference = FirebaseDatabase
+                .getInstance()
+                .getReference("package_payment")
+                .child("package");
 
         uploadBtn.setOnClickListener(new View.OnClickListener() {
             @Override

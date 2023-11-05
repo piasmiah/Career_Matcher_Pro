@@ -2,12 +2,12 @@ package com.trodev.careermatcherpro.payment;
 
 public class PackageModel {
 
-    private String aID, name, email, phone, payments, transactions, packages, status, date, time, uID;
+    private String aID, name, email, phone, payments, transactions, packages, status, date, time, uid;
 
     public PackageModel() {
     }
 
-    public PackageModel(String aID, String name, String email, String phone, String payments, String transactions, String packages, String status, String date, String time, String uID) {
+    public PackageModel(String aID, String name, String email, String phone, String payments, String transactions, String packages, String status, String date, String time, String uid) {
         this.aID = aID;
         this.name = name;
         this.email = email;
@@ -18,7 +18,7 @@ public class PackageModel {
         this.status = status;
         this.date = date;
         this.time = time;
-        this.uID = uID;
+        this.uid = uid;
     }
 
     public String getaID() {
@@ -102,10 +102,10 @@ public class PackageModel {
     }
 
     public String getuID() {
-        return uID;
+        return uid;
     }
 
     public void setuID(String uID) {
-        this.uID = uID;
+        this.uid = uID;
     }
 }

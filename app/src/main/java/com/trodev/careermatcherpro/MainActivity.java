@@ -54,8 +54,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         /*init all drawer layout*/
         drawerLayout = findViewById(R.id.drawer_Layout);
         navigationView = findViewById(R.id.navigation_view);
@@ -115,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
-                if (i == 1) {
+                else if (i == 1) {
                     setTitle("Career Matcher Pro Tube");
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -130,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
-                if (i == 2) {
+                else if (i == 2) {
                     setTitle("PDF Files");
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -143,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
                     getWindow().setStatusBarColor(Color.parseColor("#008937"));
                 }
 
-                if (i == 3) {
+               else if (i == 3) {
                     setTitle("Ordered Items");
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -156,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
                     getWindow().setStatusBarColor(Color.parseColor("#008937"));
                 }
 
-                if (i == 4) {
+                else if (i == 4) {
                     setTitle("Profile");
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -204,48 +202,15 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Website", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(MainActivity.this, WebsiteActivity.class));
 
-        } else if (itemId == R.id.menu_privacy) {
-            startActivity(new Intent(MainActivity.this, PrivacyActivity.class));
-            Toast.makeText(this, "Privacy Policy", Toast.LENGTH_SHORT).show();
-        } else if (itemId == R.id.menu_apps) {
-            Toast.makeText(this, "Our Apps", Toast.LENGTH_SHORT).show();
-            try {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/dev?id=6580660399707616800")));
-            } catch (ActivityNotFoundException e) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/dev?id=6580660399707616800")));
-            }
-        } else if (itemId == R.id.menu_cv) {
+        }  else if (itemId == R.id.menu_cv) {
             Toast.makeText(this, "Curriculum Vitae Maker", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(MainActivity.this, CVActivity.class));
         } else if (itemId == R.id.menu_package) {
             Toast.makeText(this, "Premium Packages", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(MainActivity.this, PremiumPackagesActivity.class));
-        } else if (itemId == R.id.menu_share) {
-
-            Toast.makeText(this, "Share our apps", Toast.LENGTH_SHORT).show();
-            Intent shareIntent = new Intent(Intent.ACTION_SEND);
-            shareIntent.setType("text/plain");
-            shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Career Matcher Pro");
-            String shareMessage = "\nCareer Matcher Pro App Download now\n\n";
-            shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + getApplicationContext().getPackageName() + "\n\n";
-            shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
-            startActivity(Intent.createChooser(shareIntent, "Choose one to share our apps"));
-
-        } else if (itemId == R.id.menu_rate) {
-            try {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getPackageName())));
-                Toast.makeText(this, "Rate us", Toast.LENGTH_SHORT).show();
-            } catch (ActivityNotFoundException e) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + getPackageName())));
-            }
-        } else if (itemId == R.id.menu_contact) {
-            Intent intent = new Intent(Intent.ACTION_SEND);
-            intent.setType("plain/text");
-            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"careermatcherpro@gmail.com"});
-            intent.putExtra(Intent.EXTRA_SUBJECT, "Help of");
-            intent.putExtra(Intent.EXTRA_TEXT, "Assalamualaikum, ");
-            startActivity(Intent.createChooser(intent, ""));
-        } else if (itemId == R.id.menu_mcq) {
+        }
+        else if (itemId == R.id.menu_mcq)
+        {
             startActivity(new Intent(MainActivity.this, McqMainActivity.class));
         }
 

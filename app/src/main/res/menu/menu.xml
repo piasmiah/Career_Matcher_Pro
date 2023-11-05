@@ -14,15 +14,15 @@
     <item
         android:id="@+id/menu_pdf"
         android:icon="@drawable/ic_pdf"
-        android:title="PDF's File" />
+        android:title="PDF File" />
 
     <item
         android:id="@+id/menu_about"
-        android:icon="@drawable/ic_about"
-        android:title="About Us" />
+        android:icon="@drawable/ic_cart"
+        android:title="Cart" />
     <item
         android:id="@+id/menu_profile"
         android:icon="@drawable/ic_profile"
-        android:title="Profile" />
+        android:title="Me" />
 
 </menu>

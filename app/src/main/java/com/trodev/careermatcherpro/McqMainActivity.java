@@ -27,6 +27,10 @@ public class McqMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mcq_main);
 
+        /*set tile*/
+        getSupportActionBar().setTitle("Live MCQ");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         /*init views*/
         banglaMC = findViewById(R.id.banglaMC);
         englishMC = findViewById(R.id.englishMC);

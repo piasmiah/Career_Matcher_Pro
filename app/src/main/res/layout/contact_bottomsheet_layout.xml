@@ -85,7 +85,7 @@
                         android:autoLink="email"
                         android:fontFamily="@font/poppins_regular"
                         android:gravity="center"
-                        android:text="📧 trodev@yahoo.com"
+                        android:text="📧 careermatcherpro@gmail.com"
                         android:textColor="@color/black"
                         android:textIsSelectable="true"
                         android:textSize="15sp"

@@ -5,13 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="10dp"
+    android:layout_margin="5dp"
     tools:context=".fragments.OrderFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cartRv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        tools:listitem="@layout/package_by_item"
+        />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        app:lottie_rawRes="@raw/loading_three"
+        android:layout_centerInParent="true"
+        app:lottie_autoPlay="true"
+        app:tint="@color/color_6"
+        />
+
     <!--<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
