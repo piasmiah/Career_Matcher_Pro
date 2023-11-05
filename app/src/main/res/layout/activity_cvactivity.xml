@@ -237,7 +237,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
             android:fontFamily="@font/poppins_regular"
-            android:text="Pending"
+            android:text="unapproved"
             android:textColor="@color/white"
             android:textSize="5sp"
             android:textStyle="bold" />

@@ -43,7 +43,6 @@ public class OrderFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_order, container, false);
 
-
         reference = FirebaseDatabase.getInstance().getReference("package_payment");
 
         /*init views*/
@@ -61,13 +60,14 @@ public class OrderFragment extends Fragment {
     private void load_data() {
 
         //child("Premium_Packages").
-        Query query = reference.orderByChild("uID").equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        Query query = reference.child("package_payment").orderByChild("uID").equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 list = new ArrayList<>();
                 if (!dataSnapshot.exists()) {
                     //animationView.setVisibility(View.VISIBLE);
+                    recyclerView.setVisibility(View.VISIBLE);
                     Toast.makeText(getContext(), "no data found", Toast.LENGTH_SHORT).show();
                 } else {
                     recyclerView.setVisibility(View.VISIBLE);
