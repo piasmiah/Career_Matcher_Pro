@@ -9,11 +9,9 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -27,7 +25,6 @@ import com.onesignal.debug.LogLevel;
 import com.trodev.careermatcherpro.activity.PremiumPackagesActivity;
 import com.trodev.careermatcherpro.activity.WebsiteActivity;
 import com.trodev.careermatcherpro.cv.CVActivity;
-import com.trodev.careermatcherpro.fragments.OrderFragment;
 import com.trodev.careermatcherpro.fragments.HomeFragment;
 import com.trodev.careermatcherpro.fragments.PdfFragment;
 import com.trodev.careermatcherpro.fragments.ProfileFragment;
@@ -141,20 +138,7 @@ public class MainActivity extends AppCompatActivity {
                     getWindow().setStatusBarColor(Color.parseColor("#008937"));
                 }
 
-               else if (i == 3) {
-                    setTitle("Ordered Items");
-                    FragmentManager fragmentManager = getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.frameLayout, new OrderFragment());
-                    fragmentTransaction.commit();
-
-
-                    smoothBottomBar.setBarBackgroundColor(Color.parseColor("#008937"));
-                    getWindow().setNavigationBarColor(Color.parseColor("#008937"));
-                    getWindow().setStatusBarColor(Color.parseColor("#008937"));
-                }
-
-                else if (i == 4) {
+                else if (i == 3) {
                     setTitle("Profile");
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

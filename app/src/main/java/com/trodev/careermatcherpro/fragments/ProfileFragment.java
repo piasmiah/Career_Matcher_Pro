@@ -23,6 +23,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.trodev.careermatcherpro.AboutUsActivity;
 import com.trodev.careermatcherpro.MainActivity;
 import com.trodev.careermatcherpro.McqMainActivity;
 import com.trodev.careermatcherpro.PrivacyActivity;
@@ -37,7 +38,7 @@ public class ProfileFragment extends Fragment {
     private DatabaseReference reference;
     private String userID;
     ImageView logout;
-    LinearLayout contactLl, console_ll, rateLl, shareLl, privacyLl;
+    LinearLayout contactLl, console_ll, rateLl, shareLl, privacyLl, cartLl, aboutLl;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -53,10 +54,10 @@ public class ProfileFragment extends Fragment {
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
 
-         TextView nameET = view.findViewById(R.id.nameEt);
-         TextView emailET = view.findViewById(R.id.emailTv);
-         TextView numberET = view.findViewById(R.id.mobileTv);
-         TextView passEt = view.findViewById(R.id.passTv);
+        TextView nameET = view.findViewById(R.id.nameEt);
+        TextView emailET = view.findViewById(R.id.emailTv);
+        TextView numberET = view.findViewById(R.id.mobileTv);
+        TextView passEt = view.findViewById(R.id.passTv);
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -102,6 +103,8 @@ public class ProfileFragment extends Fragment {
         rateLl = view.findViewById(R.id.rateLl);
         shareLl = view.findViewById(R.id.shareLl);
         privacyLl = view.findViewById(R.id.privacyLl);
+        cartLl = view.findViewById(R.id.cartLl);
+        aboutLl = view.findViewById(R.id.aboutLl);
 
         contactLl.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,6 +138,20 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getContext(), PrivacyActivity.class));
+            }
+        });
+
+        cartLl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), UserListActivity.class));
+            }
+        });
+
+        aboutLl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), AboutUsActivity.class));
             }
         });
 

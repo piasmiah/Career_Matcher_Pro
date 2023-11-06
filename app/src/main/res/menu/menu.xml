@@ -17,10 +17,6 @@
         android:title="PDF File" />
 
     <item
-        android:id="@+id/menu_about"
-        android:icon="@drawable/ic_cart"
-        android:title="Cart" />
-    <item
         android:id="@+id/menu_profile"
         android:icon="@drawable/ic_profile"
         android:title="Me" />
