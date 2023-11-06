@@ -48,7 +48,7 @@ public class UserListActivity extends AppCompatActivity {
         /*create methods*/
 
 
-        getSupportActionBar().setTitle("বাংলা ভাষা ও সাহিত্য");
+        getSupportActionBar().setTitle("Ordered List");
 
         tab = findViewById(R.id.tab);
         viewPager = findViewById(R.id.viewPager);

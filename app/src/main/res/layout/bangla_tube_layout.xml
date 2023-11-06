@@ -95,9 +95,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/kalpurush"
-                    android:text="স্বত্বাধিকারীঃ-"
-                    android:textColor="@color/black"
-                    android:textSize="13sp"
+                    android:text="সংগ্রহকারীঃ-"
+                    android:textColor="@color/app_color"
+                    android:textSize="10sp"
                     android:textStyle="bold"
                     />
 
@@ -107,8 +107,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_regular"
                     android:text=" Career Matcher Pro"
-                    android:textColor="@color/black"
-                    android:textSize="11sp" />
+                    android:textColor="@color/app_color"
+                    android:textSize="10sp" />
 
             </LinearLayout>
 
