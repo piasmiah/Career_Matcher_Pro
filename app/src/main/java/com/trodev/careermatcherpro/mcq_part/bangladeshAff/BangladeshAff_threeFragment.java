@@ -26,7 +26,7 @@ import java.util.List;
 
 public class BangladeshAff_threeFragment extends Fragment {
 
-    private static final String json_url = "https://zobayer-dev-e12aa.web.app/general_mcq.json";
+    private static final String json_url = "https://zobayer-dev-e12aa.web.app/bangladeshaff_mcq.json";
     RecyclerView recyclerView;
     List<BangladeshAffModel> list;
     ProgressBar progressBar;
